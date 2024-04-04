@@ -27,10 +27,10 @@ const Home: React.FC = () => {
             <div className="flex items-center h-screen">
                 <div className="mx-auto text-2xl font-bold">
                     <h2 className="inline-flex">I'm&nbsp;</h2>
-                    <Typewriter id="typewriter1" className={"inline-flex " + gradientText}>Ben Cornell</Typewriter>
+                    <Typewriter className={"inline-flex " + gradientText}>Ben Cornell</Typewriter>
                     <div>
                         <FadeIn className="mt-4 inline-flex">I'm a&nbsp;</FadeIn>
-                        <Typewriter id="typewriter2" className="inline-flex"> . . .</Typewriter>
+                        <Typewriter className="inline-flex">. . .</Typewriter>
                     </div>
                     <div className="mt-4">
                         <FadeIn className="mt-8">
