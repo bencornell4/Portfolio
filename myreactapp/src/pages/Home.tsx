@@ -17,13 +17,13 @@ const Home: React.FC = () => {
         <div>
             <div className="flex items-center h-screen">
                 <div className="mx-auto text-2xl font-bold">
-                    <h2 className="inline-flex">I'm&nbsp;</h2>
-                    <Typewriter className={"inline-flex " + gradientText}>Ben Cornell</Typewriter>
+                    <FadeIn className="mt-8 inline-flex" duration={2} delay={10}><h2>I'm&nbsp;</h2></FadeIn>
+                    <Typewriter className={"inline-flex " + gradientText} delay={14}>Ben Cornell</Typewriter>
                     <div>
-                        <Typewriter className="inline-flex" delay={12}>I'm a . . .</Typewriter>
+                        <Typewriter className="inline-flex" delay={26}>I'm a . . .</Typewriter>
                     </div>
                     <div className="mt-4">
-                        <FadeIn className="mt-8" delay={20}>
+                        <FadeIn className="mt-8" delay={34}>
                             <div className="rounded-md bg-gradient-to-tr from-blue-800 to-indigo-500 bg-clip-text">
                                 <div>
                                     <button onClick={(e) => handleButtonClick(e)} className="text-base text-transparent">Software Developer</button>
