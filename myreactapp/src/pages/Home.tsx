@@ -1,35 +1,48 @@
 import React, {useState, useEffect} from "react";
+import { motion, useAnimation } from 'framer-motion';
 import Typewriter from "../components/Typewriter";
+import FadeIn from "../components/FadeIn";
 
 const Home: React.FC = () => {
 
-    const [choiceJob, setChoiceJob] = useState<string>("...");
+    const [choiceJob, setChoiceJob] = useState<string>("");
+    const controls = useAnimation();
     const gradientText = "bg-gradient-to-tr from-blue-800 to-indigo-500 text-transparent bg-clip-text";
+    
     useEffect(() => {
-        setChoiceJob(". . .");
-    }, []);
+        controls.start(i => ({
+            opacity: 1,
+            transition: {delay: i * 0.5}
+        }));
+    }, [controls]);
 
-    const handleButtonClick = (choice: EventTarget) => {
-        setChoiceJob(choice.textContent);
+    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        const choice = event.currentTarget.textContent;
+        setChoiceJob(choice || "");
         //hide choices
-    }
+    };
 
     return (
         <div>
             <div className="flex items-center h-screen">
                 <div className="mx-auto text-2xl font-bold">
                     <h2 className="inline-flex">I'm&nbsp;</h2>
-                    <Typewriter text={"Ben Cornell"} className={"inline-flex " + gradientText}/>
-                    <h2 className="mt-4">I'm a . . .</h2>
+                    <Typewriter id="typewriter1" className={"inline-flex " + gradientText}>Ben Cornell</Typewriter>
+                    <div>
+                        <FadeIn className="mt-4 inline-flex">I'm a&nbsp;</FadeIn>
+                        <Typewriter id="typewriter2" className="inline-flex"> . . .</Typewriter>
+                    </div>
                     <div className="mt-4">
-                        <div className="rounded-md bg-gradient-to-tr from-blue-800 to-indigo-500 bg-clip-text">
-                            <div className="mt-8">
-                                <button onClick={(e) => handleButtonClick(e.target)} className="text-base text-transparent">Software Developer</button>
+                        <FadeIn className="mt-8">
+                            <div className="rounded-md bg-gradient-to-tr from-blue-800 to-indigo-500 bg-clip-text">
+                                <div>
+                                    <button onClick={(e) => handleButtonClick(e)} className="text-base text-transparent">Software Developer</button>
+                                </div>
+                                <div className="mt-4">
+                                    <button onClick={(e) => handleButtonClick(e)} className="text-base text-transparent">Writer</button>
+                                </div>
                             </div>
-                            <div className="mt-4">
-                                <button onClick={(e) => handleButtonClick(e.target)} className="text-base text-transparent">Writer</button>
-                            </div>
-                        </div>
+                        </FadeIn>
                     </div>
                 </div>
             </div>
