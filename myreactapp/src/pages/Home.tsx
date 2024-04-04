@@ -6,20 +6,11 @@ import FadeIn from "../components/FadeIn";
 const Home: React.FC = () => {
 
     const [choiceJob, setChoiceJob] = useState<string>("");
-    const controls = useAnimation();
     const gradientText = "bg-gradient-to-tr from-blue-800 to-indigo-500 text-transparent bg-clip-text";
-    
-    useEffect(() => {
-        controls.start(i => ({
-            opacity: 1,
-            transition: {delay: i * 0.5}
-        }));
-    }, [controls]);
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const choice = event.currentTarget.textContent;
         setChoiceJob(choice || "");
-        //hide choices
     };
 
     return (
@@ -29,11 +20,10 @@ const Home: React.FC = () => {
                     <h2 className="inline-flex">I'm&nbsp;</h2>
                     <Typewriter className={"inline-flex " + gradientText}>Ben Cornell</Typewriter>
                     <div>
-                        <FadeIn className="mt-4 inline-flex">I'm a&nbsp;</FadeIn>
-                        <Typewriter className="inline-flex">. . .</Typewriter>
+                        <Typewriter className="inline-flex" delay={12}>I'm a . . .</Typewriter>
                     </div>
                     <div className="mt-4">
-                        <FadeIn className="mt-8">
+                        <FadeIn className="mt-8" delay={20}>
                             <div className="rounded-md bg-gradient-to-tr from-blue-800 to-indigo-500 bg-clip-text">
                                 <div>
                                     <button onClick={(e) => handleButtonClick(e)} className="text-base text-transparent">Software Developer</button>
