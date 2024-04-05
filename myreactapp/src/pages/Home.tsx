@@ -10,8 +10,13 @@ const Home: React.FC = () => {
     const [choiceJob, setChoiceJob] = useState<string>(". . .");
     const [choiceMade, setChoiceMade] = useState<boolean>(false);
     const [fadeOut, setFadeOut] = useState<boolean>(false);
-    const gradientText = "bg-gradient-to-tr from-blue-800 to-indigo-500 text-transparent bg-clip-text";
+    const gradientText = "bg-gradient-to-tr from-blue-500 to-blue-800 text-transparent bg-clip-text";
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Scroll to the top when the Home component mounts
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const choice = event.currentTarget.textContent;
@@ -27,15 +32,16 @@ const Home: React.FC = () => {
     function navigatePage(path: string) {
         const timeoutId = setTimeout(() => {
             navigate(path);
-        }, 500);
+        }, 1000);
     }
 
 
     return (
         <motion.div
-            initial={{ opacity: 0}}
-            animate={{ opacity: !fadeOut ? 1 : 0, transition: {duration: 0.5}}}
-            exit={{ opacity: 0, transition: { duration: 0.5 }}}
+            initial={{ opacity: 0, y: "100%" }} // Initial position (below the viewport)
+            animate={{ opacity: 1, y: !fadeOut ? "0%" : "-100%"}} // Final position (slide up into view)
+            exit={{ opacity: 0, y: "-100%" }} // Exit animation (slide up and fade out)
+            transition={{ duration: 1 }} // Animation duration
         >
             {<StarBackground />}
             <div className="container p-4 h-screen font-sans text-white mx-auto">
@@ -46,11 +52,11 @@ const Home: React.FC = () => {
                             <Typewriter className={"inline-flex " + gradientText} delay={14}>Ben Cornell</Typewriter>
                             <div>
                                 <Typewriter className="inline-flex" delay={30}>I'm a&nbsp;</Typewriter>
-                                <Delay className="inline-flex" duration={38}>
+                                <Delay className="inline-flex" duration={44}>
                                     <Typewriter key={choiceJob} className={gradientText}>{choiceJob}</Typewriter>
                                 </Delay>
                             </div>
-                            <FadeIn className="mt-10" delay={42}>
+                            <FadeIn className="mt-10" delay={47}>
                                 <div className="text-center">
                                     <div>
                                         <button onClick={(e) => handleButtonClick(e)} className={`text-base border-2 p-2 rounded-lg transition-opacity duration-500 ${

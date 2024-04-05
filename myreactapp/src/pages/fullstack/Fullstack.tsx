@@ -9,8 +9,13 @@ const Fullstack: React.FC = () => {
     const [choiceJob, setChoiceJob] = useState<string>(". . .");
     const [choiceMade, setChoiceMade] = useState<boolean>(false);
     const [fadeOut, setFadeOut] = useState<boolean>(false);
-    const gradientText = "bg-gradient-to-tr from-gray-800 to-indigo-500 text-transparent bg-clip-text";
+    const gradientText = "bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text";
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Scroll to the top when the Home component mounts
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const choice = event.currentTarget.textContent;
@@ -26,16 +31,17 @@ const Fullstack: React.FC = () => {
     function navigatePage(path: string) {
         const timeoutId = setTimeout(() => {
             navigate(path);
-        }, 500);
+        }, 1000);
     }
 
     return (
         <motion.div
-            initial={{ opacity: 0}}
-            animate={{ opacity: !fadeOut ? 1 : 0, transition: {duration: 0.5}}}
-            exit={{ opacity: 0, transition: { duration: 0.5 }}}
+            initial={{ opacity: 0, y: "100%" }} // Initial position (below the viewport)
+            animate={{ opacity: 1, y: !fadeOut ? "0%" : "-100%"}} // Final position (slide up into view)
+            exit={{ opacity: 0, y: "-100%" }} // Exit animation (slide up and fade out)
+            transition={{ duration: 1 }} // Animation duration
         >
-            <div className="container p-4 h-screen font-mono text-gray-800 mx-auto bg-slate-300">
+            <div className="bg-gradient-to-tr from-gray-200 to-gray-300 p-4 h-screen w-full font-mono text-gray-800 mx-auto bg-slate-300">
                 <div>
                     <div className="flex items-center h-screen">
                         <div className=" min-w-[11rem] mx-auto text-2xl font-bold">
@@ -48,17 +54,17 @@ const Fullstack: React.FC = () => {
                             <FadeIn className="mt-10" delay={18}>
                                 <div className="text-center">
                                     <div>
-                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base border-2 border-gray-800 p-2 rounded-lg transition-opacity duration-500 ${
+                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base transition-opacity duration-500 ${
                                             choiceMade ? "opacity-0 pointer-events-none" : "opacity-100"
                                         }`}>
-                                            All Just Debts
+                                            "All Just Debts"
                                         </button>    
                                     </div>
                                     <div className="mt-4">
-                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base border-2 border-gray-800 p-2 rounded-lg transition-opacity duration-500 ${
+                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base transition-opacity duration-500 ${
                                             choiceMade ? "opacity-0 pointer-events-none" : "opacity-100"
                                         }`}>
-                                            Faces
+                                            "Faces"
                                         </button>
                                     </div>
                                 </div>
