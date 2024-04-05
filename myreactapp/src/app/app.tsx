@@ -1,17 +1,13 @@
-import Home from "../pages/Home";
-import StarBackground from "../components/StarBackground";
+import {Routes, Route} from 'react-router-dom';
+import Home from "@pages/Home";
+import Fullstack from "@pages/fullstack/Fullstack"
 
 export function App() {
   return (
-    <div>
-      <StarBackground />
-      <div className="container p-4 h-screen font-sans text-white mx-auto">
-        <Home />
-      </div>
-      <div className="bg-gradient-to-t from-gray-800 to-gray-900">
-      </div>
-    </div>
-    
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/fullstack" element={<Fullstack/>}/>
+    </Routes>
   );
 }
 
