@@ -15,11 +15,13 @@ const Typewriter: React.FC<TypewriterProps> = ({ children, className, typeSpeed 
     
     useEffect(() => {
         if (index < children.length) {
-            setTimeout(() => {
+            const timeoutId = setTimeout(() => {
                 setIndex((prevIndex) => prevIndex + 1);
             }, typeSpeed);
+
+            return () => clearTimeout(timeoutId);
         }
-    }, [index, children, typeSpeed]);
+    }, [index, typeSpeed]);
 
     return (
         <motion.span 

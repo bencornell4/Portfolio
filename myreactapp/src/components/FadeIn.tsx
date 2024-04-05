@@ -12,11 +12,11 @@ const FadeIn: React.FC<FadeInProps> = ({children, className, delay = 0, duration
     const controls = useAnimation();
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             controls.start({opacity:1});
         }, 100 * delay);
 
-        return () => clearTimeout(timer);
+        return () => clearTimeout(timeoutId);
     }, [controls, delay]);
 
     return (
