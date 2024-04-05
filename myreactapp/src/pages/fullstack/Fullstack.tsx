@@ -12,10 +12,6 @@ const Fullstack: React.FC = () => {
     const gradientText = "bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text";
     const navigate = useNavigate();
 
-    useEffect(() => {
-        // Scroll to the top when the Home component mounts
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, []);
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const choice = event.currentTarget.textContent;
@@ -36,12 +32,12 @@ const Fullstack: React.FC = () => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: "100%" }} // Initial position (below the viewport)
+            initial={{ opacity: 0, y: "50%" }} // Initial position (below the viewport)
             animate={{ opacity: 1, y: !fadeOut ? "0%" : "-100%"}} // Final position (slide up into view)
-            exit={{ opacity: 0, y: "-100%" }} // Exit animation (slide up and fade out)
+            exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
             transition={{ duration: 1 }} // Animation duration
         >
-            <div className="bg-gradient-to-tr from-gray-200 to-gray-300 p-4 h-screen w-full font-mono text-gray-800 mx-auto bg-slate-300">
+            <div className="bg-gradient-to-tr from-gray-200 to-gray-300 px-4 h-screen w-full font-mono text-gray-800 mx-auto bg-slate-300">
                 <div>
                     <div className="flex items-center h-screen">
                         <div className=" min-w-[11rem] mx-auto text-2xl font-bold">

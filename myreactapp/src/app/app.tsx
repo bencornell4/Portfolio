@@ -7,7 +7,7 @@ import StarBackground from '@components/StarBackground';
 export function App() {
   const location = useLocation();
   return (
-    <div className="main">
+    <div className='overflow-hidden'>
       <StarBackground/>
       <AnimatePresence mode="wait">
         <Routes location={location}>
