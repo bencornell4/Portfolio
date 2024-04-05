@@ -43,7 +43,6 @@ const Home: React.FC = () => {
             exit={{ opacity: 0, y: "-100%" }} // Exit animation (slide up and fade out)
             transition={{ duration: 1 }} // Animation duration
         >
-            {<StarBackground />}
             <div className="container p-4 h-screen font-sans text-white mx-auto">
                 <div>
                     <div className="flex items-center h-screen">
