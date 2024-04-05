@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
 import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";
@@ -7,17 +9,35 @@ import StarBackground from "../components/StarBackground";
 const Home: React.FC = () => {
     const [choiceJob, setChoiceJob] = useState<string>(". . .");
     const [choiceMade, setChoiceMade] = useState<boolean>(false);
+    const [fadeOut, setFadeOut] = useState<boolean>(false);
     const gradientText = "bg-gradient-to-tr from-blue-800 to-indigo-500 text-transparent bg-clip-text";
+    const navigate = useNavigate();
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const choice = event.currentTarget.textContent;
         setChoiceJob(choice || ". . .");
         setChoiceMade(true);
+        const timeoutId = setTimeout(() => {
+            setFadeOut(true);
+            navigatePage('/fullstack');
+        }, 2000);
+        return () => clearTimeout(timeoutId);
     };
 
+    function navigatePage(path: string) {
+        const timeoutId = setTimeout(() => {
+            navigate(path);
+        }, 500);
+    }
+
+
     return (
-        <div>
-            <StarBackground />
+        <motion.div
+            initial={{ opacity: 0}}
+            animate={{ opacity: !fadeOut ? 1 : 0, transition: {duration: 0.5}}}
+            exit={{ opacity: 0, transition: { duration: 0.5 }}}
+        >
+            {<StarBackground />}
             <div className="container p-4 h-screen font-sans text-white mx-auto">
                 <div>
                     <div className="flex items-center h-screen">
@@ -52,7 +72,7 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
