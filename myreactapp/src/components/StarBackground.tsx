@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface Star {
   id: string;
@@ -11,37 +12,46 @@ interface Star {
 const generateStars = (count: number): Star[] => {
   return Array.from({ length: count }, (_, index) => ({
     id: `star-${index}`,
-    size: Math.random() * 3 + 1, // Random size between 1 and 4
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
+    size: Math.random() * 2 + 2, // Random size between 1 and 4
+    x: Math.random() * window.screen.width,
+    y: (Math.random() * window.screen.height) - window.screen.height,
   }));
 };
 
 const StarBackground: React.FC = () => {
   const [stars, setStars] = useState<Star[]>([]);
+  const location = useLocation();
 
   useEffect(() => {
-    setStars(generateStars(200)); // Generate 100 stars
-  }, []);
+    if (location.pathname.includes("/fullstack"))
+    {
+      const timeoutId = setTimeout(() => {
+        setStars(generateStars(0));
+      }, 300);
+
+      return () => clearTimeout(timeoutId);
+    } else {
+      setStars(generateStars(50)); // Generate x stars 
+    }
+  }, [location]);
 
   return (
     <div className="absolute -z-10 bg-gradient-to-t from-gray-800 to-gray-900 w-full h-screen overflow-hidden">
       {stars.map((star) => (
         <motion.div
           key={star.id}
-          initial={{ opacity: 0, x: star.x, y: star.y }}
-          animate={{ opacity: 1, y: [star.y, star.y + 1000] }}
+          initial={{ x: star.x, y: star.y }}
+          animate={{ y: [star.y, star.y + 2 * window.screen.height] }}
           transition={{
-            duration: Math.random() * 5 + 2, // Random duration between 2 and 7 seconds
+            duration: Math.random() * 5 + 5, // Random duration between 2 and 7 seconds
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="absolute"
+          className="absolute bg-white"
           style={{
             width: star.size,
             height: star.size,
-            backgroundColor: 'white',
-            borderRadius: '50%',
+            opacity: Math.random() / 2,
           }}
         />
       ))}

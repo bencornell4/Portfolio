@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from 'framer-motion';
 import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import AnimatedButton from "@components/AnimatedButton";
 
-const Home: React.FC = () => {
+const Fullstack: React.FC = () => {
     const [choiceJob, setChoiceJob] = useState<string>(". . .");
     const [fadeOut, setFadeOut] = useState<boolean>(false);
-    const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
+    const gradientText = "bg-gradient-to-tr from-blue-800 to-blue-400 text-transparent bg-clip-text";
     const navigate = useNavigate();
 
 
@@ -27,14 +27,14 @@ const Home: React.FC = () => {
             }
         }
 
-        if (choice == `Writer`) {
-            path = "/writer";
-            typeDelay = 1000;
+        if (choice == `"All Just Debts"`) {
+            path = "/writer/alljustdebts";
+            typeDelay = 2000;
             setChoiceJob(choice || ". . .");
         }
-        else if (choice == `Fullstack Developer`) {
-            path = "/fullstack";
-            typeDelay = 2500;
+        else if (choice == `"Faces"`) {
+            path = "/writer/faces";
+            typeDelay = 1000;
             setChoiceJob(choice || ". . .");
         }
         
@@ -42,6 +42,8 @@ const Home: React.FC = () => {
             setFadeOut(true);
             navigatePage(path);
         }, typeDelay);
+
+        return () => clearTimeout(timeoutId);
     };
 
     function navigatePage(path: string) {
@@ -50,7 +52,6 @@ const Home: React.FC = () => {
         }, 1000);
     }
 
-
     return (
         <motion.div
             initial={{ opacity: 0, y: "50%" }} // Initial position (below the viewport)
@@ -58,28 +59,32 @@ const Home: React.FC = () => {
             exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
             transition={{ duration: 1 }} // Animation duration
         >
-            <div className="container px-4 h-screen font-sans text-white mx-auto">
+            <div className={'fixed top-0 left-0 mx-auto text-base font-bold p-4 z-50 font-mono '}>
+                <h2 className="inline-flex">bencornell</h2>
+                <AnimatedButton onClick={(e) => handleButtonClick(e)} className={gradientText} mode="size">
+                    /writer
+                </AnimatedButton>
+            </div>
+            <div className="bg-gradient-to-tr from-gray-100 to-gray-50 px-4 h-screen w-full font-mono text-gray-800 mx-auto">
                 <div>
                     <div className="flex items-center h-screen">
-                        <div className=" min-w-[11rem] mx-auto text-2xl font-bold">
-                            <Typewriter className="mt-8 inline-flex" delay={4}>I'm&nbsp;</Typewriter>
-                            <Typewriter className={"inline-flex " + gradientText} delay={8}>Ben Cornell</Typewriter>
+                        <div className="mx-auto text-2xl font-bold">
                             <div>
-                                <Typewriter className="inline-flex" delay={24}>I'm a&nbsp;</Typewriter>
-                                <Delay className="inline-flex" duration={34}>
+                                <Typewriter className="inline-flex" delay={4}>I wrote&nbsp;</Typewriter>
+                                <Delay className="inline-flex" duration={14}>
                                     <Typewriter key={choiceJob} className={gradientText}>{choiceJob}</Typewriter>
                                 </Delay>
                             </div>
-                            <FadeIn className="mt-10" delay={30}>
+                            <FadeIn className="mt-10" delay={18}>
                                 <div className="text-center">
                                     <div>
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" color="blue-400">
-                                            Fullstack Developer
-                                        </AnimatedButton>    
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" color="blue-700">
+                                            "All Just Debts"
+                                        </AnimatedButton>
                                     </div>
                                     <div className="mt-4">
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" color="blue-400">
-                                            Writer
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" color="blue-700">
+                                            "Faces"
                                         </AnimatedButton>
                                     </div>
                                 </div>
@@ -92,4 +97,4 @@ const Home: React.FC = () => {
     );
 };
 
-export default Home;
+export default Fullstack;
