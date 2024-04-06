@@ -4,23 +4,45 @@ import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import AnimatedButton from "@components/AnimatedButton";
 
 const Fullstack: React.FC = () => {
     const [choiceJob, setChoiceJob] = useState<string>(". . .");
-    const [choiceMade, setChoiceMade] = useState<boolean>(false);
     const [fadeOut, setFadeOut] = useState<boolean>(false);
-    const gradientText = "bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text";
+    const gradientText = "bg-gradient-to-tr from-blue-800 to-blue-400 text-transparent bg-clip-text";
     const navigate = useNavigate();
 
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        var typeDelay = 0;
+        var path = "/";
         const choice = event.currentTarget.textContent;
-        setChoiceJob(choice || ". . .");
-        setChoiceMade(true);
+        
+        //fade out buttons
+        const buttons = Array.from(document.getElementsByClassName('choice-button'));
+        for (const button of buttons) {
+            if (button instanceof HTMLElement) {
+                button.style.opacity = '0'; // Set opacity to 0 (fully transparent)
+                button.style.transition = 'opacity 0.5s ease-out'; // Apply transition to opacity
+            }
+        }
+
+        if (choice == `"All Just Debts"`) {
+            path = "/writer/alljustdebts";
+            typeDelay = 2000;
+            setChoiceJob(choice || ". . .");
+        }
+        else if (choice == `"Faces"`) {
+            path = "/writer/faces";
+            typeDelay = 1000;
+            setChoiceJob(choice || ". . .");
+        }
+        
         const timeoutId = setTimeout(() => {
             setFadeOut(true);
-            navigatePage('/');
-        }, 2000);
+            navigatePage(path);
+        }, typeDelay);
+
         return () => clearTimeout(timeoutId);
     };
 
@@ -37,6 +59,12 @@ const Fullstack: React.FC = () => {
             exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
             transition={{ duration: 1 }} // Animation duration
         >
+            <div className={'fixed top-0 left-0 mx-auto text-base font-bold p-4 z-50 font-mono '}>
+                <h2 className="inline-flex">bencornell</h2>
+                <AnimatedButton onClick={(e) => handleButtonClick(e)} className={gradientText} mode="size">
+                    /writer
+                </AnimatedButton>
+            </div>
             <div className="bg-gradient-to-tr from-gray-200 to-gray-300 px-4 h-screen w-full font-mono text-gray-800 mx-auto bg-slate-300">
                 <div>
                     <div className="flex items-center h-screen">
@@ -50,18 +78,14 @@ const Fullstack: React.FC = () => {
                             <FadeIn className="mt-10" delay={18}>
                                 <div className="text-center">
                                     <div>
-                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base transition-opacity duration-500 ${
-                                            choiceMade ? "opacity-0 pointer-events-none" : "opacity-100"
-                                        }`}>
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" color="blue-700">
                                             "All Just Debts"
-                                        </button>    
+                                        </AnimatedButton>
                                     </div>
                                     <div className="mt-4">
-                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base transition-opacity duration-500 ${
-                                            choiceMade ? "opacity-0 pointer-events-none" : "opacity-100"
-                                        }`}>
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" color="blue-700">
                                             "Faces"
-                                        </button>
+                                        </AnimatedButton>
                                     </div>
                                 </div>
                             </FadeIn>

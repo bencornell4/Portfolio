@@ -5,19 +5,28 @@ import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";
 import StarBackground from "../components/StarBackground";
+import AnimatedButton from "@components/AnimatedButton";
 
 const Home: React.FC = () => {
     const [choiceJob, setChoiceJob] = useState<string>(". . .");
-    const [choiceMade, setChoiceMade] = useState<boolean>(false);
     const [fadeOut, setFadeOut] = useState<boolean>(false);
-    const gradientText = "bg-gradient-to-tr from-blue-500 to-blue-800 text-transparent bg-clip-text";
+    const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
     const navigate = useNavigate();
 
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const choice = event.currentTarget.textContent;
         setChoiceJob(choice || ". . .");
-        setChoiceMade(true);
+
+        //fade out buttons
+        const buttons = Array.from(document.getElementsByClassName('choice-button'));
+        for (const button of buttons) {
+            if (button instanceof HTMLElement) {
+                button.style.opacity = '0'; // Set opacity to 0 (fully transparent)
+                button.style.transition = 'opacity 0.5s ease-out'; // Apply transition to opacity
+            }
+        }
+
         const timeoutId = setTimeout(() => {
             setFadeOut(true);
             navigatePage('/fullstack');
@@ -54,18 +63,14 @@ const Home: React.FC = () => {
                             <FadeIn className="mt-10" delay={30}>
                                 <div className="text-center">
                                     <div>
-                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base border-2 p-2 rounded-lg transition-opacity duration-500 ${
-                                            choiceMade ? "opacity-0 pointer-events-none" : "opacity-100"
-                                        }`}>
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" color="blue-400">
                                             Fullstack Developer
-                                        </button>    
+                                        </AnimatedButton>    
                                     </div>
                                     <div className="mt-4">
-                                        <button onClick={(e) => handleButtonClick(e)} className={`text-base border-2 p-2 rounded-lg transition-opacity duration-500 ${
-                                            choiceMade ? "opacity-0 pointer-events-none" : "opacity-100"
-                                        }`}>
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" color="blue-400">
                                             Writer
-                                        </button>
+                                        </AnimatedButton>
                                     </div>
                                 </div>
                             </FadeIn>
