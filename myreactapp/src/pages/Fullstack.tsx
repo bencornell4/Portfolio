@@ -75,17 +75,17 @@ const Fullstack: React.FC = () => {
                             <FadeIn className="mt-10" delay={18}>
                                 <div className="text-center">
                                     <div>
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" color="blue-400">
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                             Ovia
                                         </AnimatedButton>
                                     </div>
                                     <div className="mt-4">
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" color="blue-400">
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                             Pangrams
                                         </AnimatedButton>
                                     </div>
                                     <div className="mt-4">
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" color="blue-400">
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                             Portfolio
                                         </AnimatedButton>
                                     </div>

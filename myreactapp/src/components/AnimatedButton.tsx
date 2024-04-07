@@ -6,24 +6,26 @@ interface AnimatedButtonProps {
     children: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     mode?: string;
-    color?: string;
+    textColor?: string;
+    borderColor?: string;
 }
 
-const AnimatedButton: React.FC<AnimatedButtonProps> = ({children, className, onClick, mode, color}) => {
+const AnimatedButton: React.FC<AnimatedButtonProps> = ({children, className, onClick, mode, textColor, borderColor}) => {
     const [animationMode, setAnimationMode] = useState<string>("");
 
     useEffect(() => {
         if (mode == "color") {
-            setAnimationMode("hover:text-" + color + " hover:border-" + color + " transition-colors duration-150");
+            setAnimationMode(" " + textColor + " " + borderColor + " transition-colors duration-150");
         } else if (mode == "size") {
-            setAnimationMode("transform hover:scale-105 transition-transform duration-300 ");
+            setAnimationMode(" transform hover:scale-105 transition-transform duration-300");
         }
     }, [])
 
     return (
         <motion.button
-            className={animationMode + className}
-            onClick={onClick}    
+            className={className + animationMode}
+            onClick={onClick}
+            type="button"
         >
             {children}
         </motion.button>

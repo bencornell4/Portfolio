@@ -78,12 +78,12 @@ const Fullstack: React.FC = () => {
                             <FadeIn className="mt-10" delay={18}>
                                 <div className="text-center">
                                     <div>
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" color="blue-700">
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" textColor="hover:text-blue-700">
                                             "All Just Debts"
                                         </AnimatedButton>
                                     </div>
                                     <div className="mt-4">
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" color="blue-700">
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" textColor="hover:text-blue-700">
                                             "Faces"
                                         </AnimatedButton>
                                     </div>
