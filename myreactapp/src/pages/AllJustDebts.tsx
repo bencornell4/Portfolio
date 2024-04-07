@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import AnimatedButton from "@components/AnimatedButton";
 
-const Fullstack: React.FC = () => {
+const AllJustDebts: React.FC = () => {
     const [fadeOut, setFadeOut] = useState<boolean>(false);
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
     const navigate = useNavigate();
@@ -62,4 +62,4 @@ const Fullstack: React.FC = () => {
     );
 };
 
-export default Fullstack;
+export default AllJustDebts;

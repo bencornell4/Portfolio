@@ -32,9 +32,9 @@ const Fullstack: React.FC = () => {
             typeDelay = 2000;
             setChoiceJob(choice || ". . .");
         }
-        else if (choice == `"Faces"`) {
-            path = "/writer/faces";
-            typeDelay = 1000;
+        else if (choice == `"Anything I Like?"`) {
+            path = "/writer/anythingilike";
+            typeDelay = 2500;
             setChoiceJob(choice || ". . .");
         }
         
@@ -84,7 +84,7 @@ const Fullstack: React.FC = () => {
                                     </div>
                                     <div className="mt-4">
                                         <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" textColor="hover:text-blue-700">
-                                            "Faces"
+                                            "Anything I Like?"
                                         </AnimatedButton>
                                     </div>
                                 </div>

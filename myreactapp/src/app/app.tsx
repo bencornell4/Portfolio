@@ -5,7 +5,7 @@ import Writer from "@pages/Writer"
 import StarBackground from '@components/StarBackground';
 import Fullstack from '@pages/Fullstack';
 import AllJustDebts from '@pages/AllJustDebts';
-import Faces from '@pages/Faces';
+import AnythingILike from '@pages/AnythingILike';
 
 export function App() {
   const location = useLocation();
@@ -18,7 +18,7 @@ export function App() {
           <Route path="/writer" element={<Writer/>}/>
           <Route path="/fullstack" element={<Fullstack/>}/>
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>
-          <Route path="/writer/faces" element={<Faces/>}/>
+          <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
         </Routes>
       </AnimatePresence>
     </div>
