@@ -59,7 +59,7 @@ const Fullstack: React.FC = () => {
             exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
             transition={{ duration: 1 }} // Animation duration
         >
-            <div className={'fixed top-0 left-0 mx-auto text-base font-bold p-4 z-50 font-mono '}>
+            <div className={'fixed top-0 left-2 mx-auto text-base font-bold p-4 z-50 font-mono '}>
                 <h2 className="inline-flex">bencornell</h2>
                 <AnimatedButton onClick={(e) => handleButtonClick(e)} className={gradientText} mode="size">
                     /writer
