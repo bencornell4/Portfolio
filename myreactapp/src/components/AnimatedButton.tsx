@@ -14,7 +14,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({children, className, onC
 
     useEffect(() => {
         if (mode == "color") {
-            setAnimationMode(`hover:text-${color} hover:border-blue-400 transition-colors duration-150 `);
+            setAnimationMode("hover:text-" + color + " hover:border-" + color + " transition-colors duration-150");
         } else if (mode == "size") {
             setAnimationMode("transform hover:scale-105 transition-transform duration-300 ");
         }
