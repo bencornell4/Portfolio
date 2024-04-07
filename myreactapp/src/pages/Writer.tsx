@@ -29,11 +29,16 @@ const Fullstack: React.FC = () => {
 
         if (choice == `"All Just Debts"`) {
             path = "/writer/alljustdebts";
-            typeDelay = 2000;
+            typeDelay = 2500;
             setChoiceJob(choice || ". . .");
         }
-        else if (choice == `"Anything I Like?"`) {
+        else if (choice == `"Anything I like?"`) {
             path = "/writer/anythingilike";
+            typeDelay = 2500;
+            setChoiceJob(choice || ". . .");
+        }
+        else if (choice == `"Piss drunk, too"`) {
+            path = "/writer/pissdrunktoo";
             typeDelay = 2500;
             setChoiceJob(choice || ". . .");
         }
@@ -84,7 +89,12 @@ const Fullstack: React.FC = () => {
                                     </div>
                                     <div className="mt-4">
                                         <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" textColor="hover:text-blue-700">
-                                            "Anything I Like?"
+                                            "Anything I like?"
+                                        </AnimatedButton>
+                                    </div>
+                                    <div className="mt-4">
+                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base" mode="color" textColor="hover:text-blue-700">
+                                            "Piss drunk, too"
                                         </AnimatedButton>
                                     </div>
                                 </div>

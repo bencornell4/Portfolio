@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import AnimatedButton from "@components/AnimatedButton";
 
-const AnythingILike: React.FC = () => {
+const PissDrunkToo: React.FC = () => {
     const [fadeOut, setFadeOut] = useState<boolean>(false);
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ const AnythingILike: React.FC = () => {
             <div className={'fixed top-0 left-2 mx-auto text-base text-white font-bold p-4 z-50 font-mono '}>
                 <h2 className="inline-flex">bencornell/writer</h2>
                 <AnimatedButton onClick={(e) => handleButtonClick(e)} className={gradientText} mode="size">
-                    /anythingilike
+                    /pissdrunktoo
                 </AnimatedButton>
             </div>
             <div className={'fixed text-right top-0 right-2 mx-auto text-base text-white font-bold p-4 z-50 font-mono'}>
@@ -49,7 +49,7 @@ const AnythingILike: React.FC = () => {
                 <div>
                     <div className="flex items-center h-screen">
                     <iframe 
-                        src="https://drive.google.com/file/d/1v2QR0Q9XLYdS1pM8k02X_t3OOQa2VeHD/preview"
+                        src="https://drive.google.com/file/d/1grDpPs9cCRCfv1XgNcsdoaP_TMuJlskk/preview"
                         loading="lazy"
                         width="100%" 
                         height="80%"
@@ -62,4 +62,4 @@ const AnythingILike: React.FC = () => {
     );
 };
 
-export default AnythingILike;
+export default PissDrunkToo;

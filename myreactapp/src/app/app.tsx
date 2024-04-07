@@ -6,6 +6,7 @@ import StarBackground from '@components/StarBackground';
 import Fullstack from '@pages/Fullstack';
 import AllJustDebts from '@pages/AllJustDebts';
 import AnythingILike from '@pages/AnythingILike';
+import PissDrunkToo from '@pages/PissDrunkToo';
 
 export function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ export function App() {
           <Route path="/fullstack" element={<Fullstack/>}/>
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>
           <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
+          <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>
         </Routes>
       </AnimatePresence>
     </div>
