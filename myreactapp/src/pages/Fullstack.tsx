@@ -86,10 +86,32 @@ const Fullstack: React.FC = () => {
                             </div>
                             <FadeIn className="mt-10" delay={18}>
                                 <div>
-                                    <div className="mx-2 inline-flex justify-center">
-                                        <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button border-2 p-2 rounded-lg w-[50%]" mode="size">
-                                            <video loop src="public/OviaUserExperience.mp4"/>
-                                        </AnimatedButton>
+                                    <div className="mx-2">
+                                        <div className="flex justify-center">
+                                            <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button border-2 p-2 rounded-lg w-[33%]" mode="size">
+                                                <video loop src="public/OviaUserExperience.mp4" />
+                                            </AnimatedButton>
+                                        </div>
+                                        <div className="flex justify-center items-center space-x-2 mt-2">
+                                            <AnimatedButton mode="size">
+                                                <img src="public/fullstackicons/javascript.png" alt="javascript" title="javascript" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="public/fullstackicons/html.png" alt="html" title="html" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="public/fullstackicons/css.png" alt="css" title="css" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="public/fullstackicons/node.png" alt="node" title="node" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="public/fullstackicons/express.png" alt="express" title="express" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="public/fullstackicons/postgres.png" alt="postgreSQL"  title="postgreSQL" className="h-7"/>
+                                            </AnimatedButton>
+                                        </div>
                                     </div>
                                 </div>
                             </FadeIn>
