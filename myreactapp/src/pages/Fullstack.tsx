@@ -40,7 +40,7 @@ const Fullstack: React.FC = () => {
             }
         }
 
-        if (choice == `/fullstack`) {
+        if (choice == "/fullstack") {
             path = "/";
             typeDelay = 0;
             const timeoutId = setTimeout(() => {
@@ -85,31 +85,55 @@ const Fullstack: React.FC = () => {
                                 </Delay>
                             </div>
                             <FadeIn className="mt-10" delay={18}>
-                                <div>
+                                <div className="inline-flex">
                                     <div className="mx-2">
                                         <div className="flex justify-center">
-                                            <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button border-2 p-2 rounded-lg w-[33%]" mode="size">
-                                                <video loop src="public/OviaUserExperience.mp4" />
+                                            <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button border-2 p-2 rounded-lg w-[70%]" mode="size">
+                                                <video loop src="https://res.cloudinary.com/dllfvjfoy/video/upload/v1712606531/OviaUserExperience_l73v3m.mp4" />
                                             </AnimatedButton>
                                         </div>
-                                        <div className="flex justify-center items-center space-x-2 mt-2">
+                                        <div className="choice-button flex justify-center items-center space-x-2 mt-4">
                                             <AnimatedButton mode="size">
-                                                <img src="public/fullstackicons/javascript.png" alt="javascript" title="javascript" className="h-7"/>
+                                                <img src="fullstackicons/javascript.png" alt="javascript" title="javascript" className="h-7"/>
                                             </AnimatedButton>
                                             <AnimatedButton mode="size">
-                                                <img src="public/fullstackicons/html.png" alt="html" title="html" className="h-7"/>
+                                                <img src="fullstackicons/html.png" alt="html" title="html" className="h-7"/>
                                             </AnimatedButton>
                                             <AnimatedButton mode="size">
-                                                <img src="public/fullstackicons/css.png" alt="css" title="css" className="h-7"/>
+                                                <img src="fullstackicons/css.png" alt="css" title="css" className="h-7"/>
                                             </AnimatedButton>
                                             <AnimatedButton mode="size">
-                                                <img src="public/fullstackicons/node.png" alt="node" title="node" className="h-7"/>
+                                                <img src="fullstackicons/node.png" alt="node" title="node" className="h-7"/>
                                             </AnimatedButton>
                                             <AnimatedButton mode="size">
-                                                <img src="public/fullstackicons/express.png" alt="express" title="express" className="h-7"/>
+                                                <img src="fullstackicons/express.png" alt="express" title="express" className="h-7"/>
                                             </AnimatedButton>
                                             <AnimatedButton mode="size">
-                                                <img src="public/fullstackicons/postgres.png" alt="postgreSQL"  title="postgreSQL" className="h-7"/>
+                                                <img src="fullstackicons/postgres.png" alt="postgreSQL"  title="postgreSQL" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="fullstackicons/cloudinary.png" alt="cloudinary"  title="cloudinary" className="h-7"/>
+                                            </AnimatedButton>
+                                        </div>
+                                    </div>
+                                    <div className="mx-2">
+                                        <div className="flex justify-center">
+                                            <AnimatedButton onClick={(e) => handleButtonClick("this site")} className="choice-button border-2 p-2 rounded-lg w-[70%]" mode="size">
+                                                <video loop src="https://res.cloudinary.com/dllfvjfoy/video/upload/v1712607046/PortfolioPreview_worsia.mp4" />
+                                            </AnimatedButton>
+                                        </div>
+                                        <div className="choice-button flex justify-center items-center space-x-2 mt-4">
+                                            <AnimatedButton mode="size">
+                                                <img src="fullstackicons/typescript.png" alt="typescript" title="typescript" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="fullstackicons/react.png" alt="react" title="react" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="fullstackicons/tailwind.png" alt="tailwind" title="tailwind" className="h-7"/>
+                                            </AnimatedButton>
+                                            <AnimatedButton mode="size">
+                                                <img src="fullstackicons/cloudinary.png" alt="cloudinary"  title="cloudinary" className="h-7"/>
                                             </AnimatedButton>
                                         </div>
                                     </div>
