@@ -24,6 +24,7 @@ const Home: React.FC = () => {
             if (button instanceof HTMLElement) {
                 button.style.opacity = '0'; // Set opacity to 0 (fully transparent)
                 button.style.transition = 'opacity 0.5s ease-out'; // Apply transition to opacity
+                button.setAttribute('disabled', '');
             }
         }
 
@@ -61,7 +62,7 @@ const Home: React.FC = () => {
             <div className="container px-4 h-screen font-sans text-white mx-auto">
                 <div>
                     <div className="flex items-center h-screen">
-                        <div className=" min-w-[11rem] mx-auto text-2xl font-bold">
+                        <div className="min-w-[11rem] mx-auto text-2xl font-bold">
                             <Typewriter className="mt-8 inline-flex" delay={4}>I'm&nbsp;</Typewriter>
                             <Typewriter className={"inline-flex " + gradientText} delay={8}>Ben Cornell</Typewriter>
                             <div>

@@ -13,11 +13,23 @@ const Fullstack: React.FC = () => {
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const videos = Array.from(document.querySelectorAll('video'));
+        for (const video of videos) {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
 
-    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+            });
+        }
+    }, [])
+
+    const handleButtonClick = (buttonSelected: string) => {
         var typeDelay = 0;
         var path = "/";
-        const choice = event.currentTarget.textContent;
+        const choice = buttonSelected;
         
         //fade out buttons
         const buttons = Array.from(document.getElementsByClassName('choice-button'));
@@ -58,7 +70,7 @@ const Fullstack: React.FC = () => {
             <CodeBackground/>
             <div className={'fixed top-0 left-2 mx-auto text-base font-bold p-4 z-50 font-sans text-white'}>
                 <h2 className="inline-flex">bencornell</h2>
-                <AnimatedButton onClick={(e) => handleButtonClick(e)} className={gradientText} mode="size">
+                <AnimatedButton onClick={(e) => handleButtonClick("/fullstack")} className={gradientText} mode="size">
                     /fullstack
                 </AnimatedButton>
             </div>
@@ -66,27 +78,17 @@ const Fullstack: React.FC = () => {
                 <div>
                     <div className="flex items-center h-screen">
                         <div className="mx-auto text-2xl font-bold">
-                            <div>
+                            <div className="text-center">
                                 <Typewriter className="inline-flex" delay={4}>I made&nbsp;</Typewriter>
                                 <Delay className="inline-flex" duration={14}>
                                     <Typewriter key={choiceJob} className={gradientText}>{choiceJob}</Typewriter>
                                 </Delay>
                             </div>
                             <FadeIn className="mt-10" delay={18}>
-                                <div className="text-center">
-                                    <div>
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
-                                            Ovia
-                                        </AnimatedButton>
-                                    </div>
-                                    <div className="mt-4">
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
-                                            Pangrams
-                                        </AnimatedButton>
-                                    </div>
-                                    <div className="mt-4">
-                                        <AnimatedButton onClick={(e) => handleButtonClick(e)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
-                                            Portfolio
+                                <div>
+                                    <div className="mx-2 inline-flex justify-center">
+                                        <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button border-2 p-2 rounded-lg w-[50%]" mode="size">
+                                            <video loop src="public/OviaUserExperience.mp4"/>
                                         </AnimatedButton>
                                     </div>
                                 </div>

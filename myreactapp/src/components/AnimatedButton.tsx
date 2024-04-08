@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 interface AnimatedButtonProps {
     className?: string;
-    children: string;
+    children: React.ReactNode;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     mode?: string;
     textColor?: string;

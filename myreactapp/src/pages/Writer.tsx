@@ -24,6 +24,7 @@ const Fullstack: React.FC = () => {
             if (button instanceof HTMLElement) {
                 button.style.opacity = '0'; // Set opacity to 0 (fully transparent)
                 button.style.transition = 'opacity 0.5s ease-out'; // Apply transition to opacity
+                button.setAttribute('disabled', '');
             }
         }
 
