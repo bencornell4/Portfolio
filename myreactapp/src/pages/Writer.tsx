@@ -74,7 +74,7 @@ const Fullstack: React.FC = () => {
             <div className="bg-gradient-to-tr from-gray-100 to-gray-50 px-4 h-screen w-full font-mono text-gray-800 mx-auto">
                 <div>
                     <div className="flex items-center h-screen">
-                        <div className="mx-auto text-2xl font-bold">
+                        <div className="mx-auto text-2xl font-bold whitespace-nowrap">
                             <div>
                                 <Typewriter className="inline-flex" delay={4}>I wrote&nbsp;</Typewriter>
                                 <Delay className="inline-flex" duration={14}>

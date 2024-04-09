@@ -27,7 +27,7 @@ const CodeBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute -z-10 w-full h-screen overflow-hidden">
+    <div className="absolute -z-10 w-full h-full overflow-hidden">
       {fallingCode.map((digit) => (
         <motion.div
           key={digit.id}
