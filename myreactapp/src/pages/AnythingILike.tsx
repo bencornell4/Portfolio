@@ -38,10 +38,10 @@ const AnythingILike: React.FC = () => {
             <div className={'fixed top-0 left-2 mx-auto text-base text-white font-bold p-4 z-50 font-mono '}>
                 <h2 className="inline-flex">bencornell/writer</h2>
                 <AnimatedButton onClick={(e) => handleButtonClick(e)} className={gradientText} mode="size">
-                    /anythingilike
+                    /alljustdebts
                 </AnimatedButton>
             </div>
-            <div className={'fixed text-right top-0 right-2 mx-auto text-base text-white font-bold p-4 z-50 font-mono'}>
+            <div className={'fixed top-12 left-2 sm:top-0 sm:text-right sm:right-2 mx-auto text-base text-white font-bold p-4 z-50 font-mono'}>
                 <h2 className="inline-flex">650-421-5868</h2>
                 <h2 className="">bencornell44@gmail.com</h2>
             </div>
@@ -49,11 +49,11 @@ const AnythingILike: React.FC = () => {
                 <div>
                     <div className="flex items-center h-screen">
                     <iframe 
-                        src="https://drive.google.com/file/d/1v2QR0Q9XLYdS1pM8k02X_t3OOQa2VeHD/preview"
+                        src="https://drive.google.com/file/d/1v2QR0Q9XLYdS1pM8k02X_t3OOQa2VeHD/preview" 
                         loading="lazy"
                         width="100%" 
-                        height="80%"
-                        className="mt-8 border-0 bg-none"
+                        height="55%"
+                        className="sm:h-[80%] sm:mt-8 border-0 bg-none"
                     />
                     </div>
                 </div>
