@@ -41,7 +41,7 @@ const AllJustDebts: React.FC = () => {
                     /alljustdebts
                 </AnimatedButton>
             </div>
-            <div className={'fixed text-right top-0 right-2 mx-auto text-base text-white font-bold p-4 z-50 font-mono'}>
+            <div className={'fixed top-12 left-2 sm:top-0 sm:text-right sm:right-2 mx-auto text-base text-white font-bold p-4 z-50 font-mono'}>
                 <h2 className="inline-flex">650-421-5868</h2>
                 <h2 className="">bencornell44@gmail.com</h2>
             </div>
@@ -52,8 +52,8 @@ const AllJustDebts: React.FC = () => {
                         src="https://drive.google.com/file/d/1-qspm6856dm44tHVQI06AS2iuzbrqT5n/preview" 
                         loading="lazy"
                         width="100%" 
-                        height="80%"
-                        className="mt-8 border-0 bg-none"
+                        height="55%"
+                        className="sm:h-[80%] sm:mt-8 border-0 bg-none"
                     />
                     </div>
                 </div>
