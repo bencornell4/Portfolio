@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";
@@ -67,7 +67,7 @@ const Fullstack: React.FC = () => {
             exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
             transition={{ duration: 1 }} // Animation duration
         >
-            <div>
+            <div className="overflow-y-scroll overflow-x-hidden">
                 <CodeBackground/>
                 <div className={'fixed top-0 left-2 mx-auto text-base font-bold p-4 z-50 font-sans text-white'}>
                     <h2 className="inline-flex">bencornell</h2>
@@ -75,10 +75,10 @@ const Fullstack: React.FC = () => {
                         /fullstack
                     </AnimatedButton>
                 </div>
-                <div className="overflow-y-scroll md:overflow-y-hidden container p-10 h-screen font-sans text-white mx-auto">
+                <div className="container h-screen font-sans text-white mx-auto">
                     <div>
                         <div className="flex items-center">
-                            <div className="mt-10 mx-auto text-2xl font-bold">
+                            <div className="mt-10 mb-10 mx-auto text-2xl font-bold">
                                 <div className="mt-12 text-center">
                                     <Typewriter className="inline-flex" delay={4}>I made&nbsp;</Typewriter>
                                     <Delay className="inline-flex" duration={14}>
@@ -89,8 +89,8 @@ const Fullstack: React.FC = () => {
                                     <div className="md:flex mt-14">
                                         <div className="mt-10 md:mt-0 md:mr-0">
                                             <div className="flex justify-center">
-                                                <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button border-2 p-2 rounded-lg w-[90%] sm:w-[60%]" mode="size">
-                                                    <video loop src="https://res.cloudinary.com/dllfvjfoy/video/upload/v1712606531/OviaUserExperience_l73v3m.mp4" />
+                                                <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button flex overflow-none border-2 rounded-lg w-[100%] sm:w-[20rem] mx-10 overflow-y-hidden" mode="size">
+                                                    <iframe scrolling="no" src="https://ovia.live/" title="Ovia" className="flex-grow border-none h-[400px] pointer-events-none"/>
                                                 </AnimatedButton>
                                             </div>
                                             <div className="choice-button flex justify-center items-center space-x-2 mt-4">
@@ -119,8 +119,8 @@ const Fullstack: React.FC = () => {
                                         </div>
                                         <div className="mt-20 md:mt-0 md:mr-0">
                                             <div className="flex justify-center">
-                                                <AnimatedButton onClick={(e) => handleButtonClick("this site")} className="choice-button border-2 p-2 rounded-lg w-[90%] sm:w-[60%]" mode="size">
-                                                    <video loop src="https://res.cloudinary.com/dllfvjfoy/video/upload/v1712607046/PortfolioPreview_worsia.mp4" />
+                                                <AnimatedButton onClick={(e) => handleButtonClick("Ovia")} className="choice-button overflow-none border-2 rounded-lg w-[100%] sm:w-[20rem] mx-10 overflow-y-hidden" mode="size">
+                                                    <iframe scrolling="no" src="https://bencornell.netlify.app/" title="Ovia" className="flex-grow border-none h-[400px] pointer-events-none"/>
                                                 </AnimatedButton>
                                             </div>
                                             <div className="choice-button flex justify-center items-center space-x-2 mt-4">
