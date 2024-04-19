@@ -1,5 +1,6 @@
 import {Routes, Route, useLocation} from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import PageComponent from "@components/PageComponent";
 import Home from "@pages/Home";
 import Writer from "@pages/Writer"
 import StarBackground from '@components/StarBackground';
@@ -15,9 +16,9 @@ export function App() {
       <StarBackground/>
       <AnimatePresence mode="wait">
         <Routes location={location}>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/writer" element={<Writer/>}/>
-          <Route path="/fullstack" element={<Fullstack/>}/>
+          <Route path="/" element={<PageComponent><Home/></PageComponent>}/>
+          <Route path="/writer" element={<PageComponent><Writer/></PageComponent>}/>
+          <Route path="/fullstack" element={<PageComponent><Fullstack/></PageComponent>}/>
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>
           <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
           <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>
