@@ -16,9 +16,9 @@ export function App() {
       <StarBackground/>
       <AnimatePresence mode="wait">
         <Routes location={location}>
-          <Route path="/" element={<PageComponent><Home/></PageComponent>}/>
-          <Route path="/writer" element={<PageComponent><Writer/></PageComponent>}/>
-          <Route path="/fullstack" element={<PageComponent><Fullstack/></PageComponent>}/>
+          <Route path="/" element={<PageComponent><Home handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/writer" element={<PageComponent><Writer handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/fullstack" element={<PageComponent><Fullstack handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>
           <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
           <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>

@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
-import PageComponentContext from "./PageComponentContext";
+import { ChoicePageProps } from "types";
 
 type PageComponentProps = {
     children: React.ReactNode;
@@ -47,23 +47,28 @@ const PageComponent: React.FC<PageComponentProps> = ({children, className}) => {
     function navigatePage(path: string) {
         const timeoutId = setTimeout(() => {
             navigate(path);
-            setChoiceJob(". . .");
             setFadeOut(false);
+            setChoiceJob(". . .");
         }, 1000);
     }
 
+    const addProps = (props: ChoicePageProps, children: React.ReactNode) => {
+        if (React.isValidElement(children)) {
+            return React.cloneElement(children, props);
+        }
+        return children;
+    };
+
     return (
-        <PageComponentContext.Provider value={{ choiceJob, setChoiceJob, handleButtonClick }}>
-            <motion.div
-                initial={{ opacity: 0, y: "50%" }} // Initial position (below the viewport)
-                animate={{ opacity: 1, y: !fadeOut ? "0%" : "-100%"}} // Final position (slide up into view)
-                exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
-                transition={{ duration: 1 }} // Animation duration
-                className={className}
-            >
-                {children}
-            </motion.div>
-        </PageComponentContext.Provider>
+        <motion.div
+            initial={{ opacity: 0, y: "50%" }} // Initial position (below the viewport)
+            animate={{ opacity: 1, y: !fadeOut ? "0%" : "-100%"}} // Final position (slide up into view)
+            exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
+            transition={{ duration: 1 }} // Animation duration
+            className={className}
+        >
+            {addProps({handleButtonClick, choiceJob}, children)}
+        </motion.div>
     );
 };
 

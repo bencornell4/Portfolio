@@ -1,14 +1,13 @@
-import React, {useContext} from "react";
-import PageComponentContext from "@components/PageComponentContext";
+import React from "react";
 import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";
 import AnimatedButton from "@components/AnimatedButton";
 import CodeBackground from "@components/CodeBackground";
+import { ChoicePageProps } from "types";
 
-const Fullstack: React.FC = () => {
+const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
-    const {choiceJob, handleButtonClick} = useContext(PageComponentContext);
     const choices =
     [
         ["Ovia", "/fullstack/ovia"],
