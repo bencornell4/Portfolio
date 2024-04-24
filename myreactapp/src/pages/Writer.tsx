@@ -18,7 +18,7 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
         <div>
             <div className={'fixed top-0 left-2 mx-auto text-base font-bold p-4 z-50 font-mono '}>
                 <h2 className="inline-flex">bencornell</h2>
-                <AnimatedButton onClick={(e) => handleButtonClick("back", choices)} className={gradientText} mode="size">
+                <AnimatedButton onClick={(e) => handleButtonClick("/", choices)} className={gradientText} mode="size">
                     /writer
                 </AnimatedButton>
             </div>

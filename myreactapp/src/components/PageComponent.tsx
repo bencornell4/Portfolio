@@ -28,12 +28,19 @@ const PageComponent: React.FC<PageComponentProps> = ({children, className}) => {
             }
         }
 
+
+        var inChoices = 0;
         for (const item in choices) {
             if (choice === choices[item][0]) {
                 path = choices[item][1];
                 typeDelay = 150 * choice.length;
+                inChoices = 1;
                 setChoiceJob(choice || ". . .");
             }
+        }
+
+        if (!inChoices) {
+            path = choice;
         }
         
         const timeoutId = setTimeout(() => {

@@ -19,7 +19,7 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
             <CodeBackground/>
             <div className={'fixed top-0 left-2 mx-auto text-base font-bold p-4 z-50 font-sans text-white'}>
                 <h2 className="inline-flex">bencornell</h2>
-                <AnimatedButton onClick={(e) => handleButtonClick("back", choices)} className={gradientText} mode="size">
+                <AnimatedButton onClick={(e) => handleButtonClick("/", choices)} className={gradientText} mode="size">
                     /fullstack
                 </AnimatedButton>
             </div>
@@ -33,7 +33,7 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                                     <Typewriter key={choiceJob} className={gradientText}>{choiceJob}</Typewriter>
                                 </Delay>
                             </div>
-                            <FadeIn className="mt-10" delay={18}>
+                            <FadeIn inFrame={true} className="mt-10" delay={18}>
                                 <div className="md:flex mt-14">
                                     <div className="mt-10 md:mt-0 md:mr-0">
                                         <div className="flex justify-center">

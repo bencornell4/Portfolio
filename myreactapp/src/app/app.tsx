@@ -8,6 +8,7 @@ import Fullstack from '@pages/Fullstack';
 import AllJustDebts from '@pages/AllJustDebts';
 import AnythingILike from '@pages/AnythingILike';
 import PissDrunkToo from '@pages/PissDrunkToo';
+import Ovia from '@pages/Ovia';
 
 export function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ export function App() {
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>
           <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
           <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>
+          <Route path="/fullstack/ovia" element={<PageComponent><Ovia handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
         </Routes>
       </AnimatePresence>
     </div>
