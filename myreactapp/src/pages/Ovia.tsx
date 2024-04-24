@@ -32,7 +32,7 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                             <div className="mt-12 text-center">
                                 <FadeIn>
                                     <img className="m-auto w-52" src="/ovia/OviaLogo.png"/>
-                                    <Typewriter className={"text-base relative bottom-5 " + gradientText}>a social media for gamers</Typewriter>
+                                    <Typewriter className={"text-base relative bottom-5 " + gradientText}>social media for gamers</Typewriter>
                                 </FadeIn>
                             </div>
                             <FadeIn delay={20}>
@@ -45,21 +45,21 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                     "Files fetched from cloud hosting",
                                     "Third party API integration"]
                                 }/>
-                                <MediaAndText mediaPath="ovia/OviaLoginPreview.mov" mediaTitle="Authentication" bulletPoints={
+                                <MediaAndText className="mt-36" mediaPath="ovia/OviaLoginPreview.mov" mediaTitle="Authentication" bulletPoints={
                                     ["Passwords hashed, stored and fetched securely", 
                                     "JWTs and cookies for authenticating routes"]
                                 } flipOrientation = {true}/>
-                                <MediaAndText mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Custom Profiles" bulletPoints={
+                                <MediaAndText className="mt-36" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Custom Profiles" bulletPoints={
                                     ["Profile data stored securely", 
                                     "Custom profile pics, bios, and display names"]
                                 }/>
-                                <MediaAndText mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
+                                <MediaAndText className="mt-36" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
                                     ["Video data stored securely in a PostgreSQL database", 
                                     "Files uploaded to third party cloud hosting"]
                                 } flipOrientation = {true}/>
                             </FadeIn>
                             <FadeIn>
-                                <AnimatedButton onClick={(e) => window.open("https://www.ovia.live")} className="block m-auto choice-button text-base border-2 p-2 rounded-lg -mt-10" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                <AnimatedButton onClick={(e) => window.open("https://www.ovia.live")} className="block m-auto choice-button text-base border-2 p-2 rounded-lg mt-24" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                     www.ovia.live
                                 </AnimatedButton>
                                 <div className="choice-button flex justify-center items-center space-x-2 mt-10 mb-32">
