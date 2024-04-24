@@ -6,6 +6,7 @@ import AnimatedButton from "@components/AnimatedButton";
 import CodeBackground from "@components/CodeBackground";
 import { ChoicePageProps } from "types";
 import MediaAndText from "@components/MediaAndText";
+import { link } from "fs";
 
 const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
@@ -31,112 +32,58 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                             <div className="mt-12 text-center">
                                 <FadeIn>
                                     <img className="m-auto w-52" src="/ovia/OviaLogo.png"/>
-                                    <Typewriter className={"text-base relative bottom-5 " + gradientText}>a social media app for gamers</Typewriter>
+                                    <Typewriter className={"text-base relative bottom-5 " + gradientText}>a social media for gamers</Typewriter>
                                 </FadeIn>
                             </div>
-                            <FadeIn className="mt-40" delay={20} inFrame={true}>
+                            <FadeIn delay={20}>
+                                <img src="scrollicon1.gif" className="w-40 mt-20 m-auto"/>
+                            </FadeIn>
+                            <FadeIn className="mt-20" delay={20} inFrame={true}>
                                 <MediaAndText mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Streaming" bulletPoints={
-                                    ["Infinitely scrolling feed", 
-                                    "Video data stored securely in a PostgreSQL database", 
-                                    "Files stored and fetched from third party Cloudinary API"]
+                                    ["Infinite scrolling", 
+                                    "Video keys fetched from a PostgreSQL database",
+                                    "Files fetched from cloud hosting",
+                                    "Third party API integration"]
                                 }/>
                                 <MediaAndText mediaPath="ovia/OviaLoginPreview.mov" mediaTitle="Authentication" bulletPoints={
                                     ["Passwords hashed, stored and fetched securely", 
                                     "JWTs and cookies for authenticating routes"]
+                                } flipOrientation = {true}/>
+                                <MediaAndText mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Custom Profiles" bulletPoints={
+                                    ["Profile data stored securely", 
+                                    "Custom profile pics, bios, and display names"]
                                 }/>
-                                {/*<FadeIn>
-                                    <div className="inline-flex">
-                                        <div className="text-center ml-5 lg:mr-10">
-                                            <video className="h-[80vh]" loop autoPlay muted playsInline src="ovia/OviaFeedPreview.mov"/>
-                                        </div>
-                                    </div>
-                                    <div className="inline-flex">
-                                        <div className="relative text-left ml-10 mr-10 lg:ml-10 w-52 bottom-[24rem]">
-                                            <h2 className={"text-left text-xl white bg-gradient-to-tr from-blue-400 to-blue-800 p-1 pl-4 mr-5 mb-20 rounded-lg"}>
-                                                Cloud Streaming
-                                            </h2>
-                                            <p className="text-sm whitespace-normal">
-                                                Infinitely scrolling feed
-                                            </p>
-                                            <p className="mt-10 text-sm whitespace-normal">
-                                                Video data stored securely in a PostgreSQL database
-                                            </p>
-                                            <p className="mt-10 text-sm whitespace-normal">
-                                                Files stored and fetched from third party API
-                                            </p>
-                                        </div>
-                                    </div>
-                                </FadeIn>*/}
-                                <FadeIn>
-                                    <div className="inline-flex md:flex">
-                                        <div className="relative text-center mr-5 w-52 bottom-[23rem]">
-                                            <h2 className={"text-2xl white bg-gradient-to-tr from-blue-400 to-blue-800 p-1 mb-20 rounded-lg"}>
-                                                Authentication
-                                            </h2>
-                                            <p className="text-base whitespace-normal">
-                                                Passwords hashed, stored and fetched securely
-                                            </p>
-                                            <p className="mt-10 text-base whitespace-normal">
-                                                JWTs and cookies for authenticating routes
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="inline-flex md:flex">
-                                        <div className="text-center">
-                                            <video className="h-[80vw]" loop autoPlay muted playsInline src="ovia/OviaLoginPreview.mov"/>
-                                        </div>
-                                    </div>
-                                </FadeIn>
-                                <div>
-                                    <div className="md:flex mt-20">
-                                        <FadeIn className="text-center m-auto w-96">
-                                            <video loop autoPlay muted playsInline src="ovia/OviaLoginPreview.mov"/>
-                                            <h2 className={"m-auto text-3xl z-10 relative bottom-[15rem] white bg-gradient-to-tr from-blue-400 to-blue-800 p-2 mx-16 rounded-lg"}>Authentication</h2>
-                                        </FadeIn>
-                                    </div>
-                                    <div className="md:flex">
-                                        <FadeIn className="text-center m-auto w-52">
-                                            <p className="text-base whitespace-normal">
-                                                Passwords hashed, stored and fetched securely.
-                                            </p>
-                                            <p className="mt-10 text-base whitespace-normal">
-                                                JWTs and cookies for authenticating routes.
-                                            </p>
-                                        </FadeIn>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="md:flex mt-20">
-                                        <FadeIn className="text-center m-auto w-96">
-                                            <video loop autoPlay muted playsInline src="/ovia/OviaFeedPreview.mov"/>
-                                            <h2 className={"m-auto text-3xl z-10 relative bottom-[15rem] white drop-shadow-md bg-gradient-to-tr from-blue-400 to-blue-800 p-2 mx-16 rounded-lg"}>Custom Profiles</h2>
-                                        </FadeIn>
-                                    </div>
-                                    <div className="md:flex">
-                                        <FadeIn className="text-center m-auto w-52">
-                                            <p className="text-base whitespace-normal">
-                                                Profile data stored securely.
-                                            </p>
-                                            <p className="mt-10 text-base whitespace-normal">
-                                                Custom profile pics, bios, and display names.
-                                            </p>
-                                        </FadeIn>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="md:flex mt-20">
-                                        <FadeIn className="text-center m-auto w-96">
-                                            <video loop autoPlay muted playsInline src="/ovia/OviaFeedPreview.mov"/>
-                                            <h2 className={"m-auto text-3xl z-10 relative bottom-[15rem] white drop-shadow-md bg-gradient-to-tr from-blue-400 to-blue-800 p-2 mx-16 rounded-lg"}>Cloud Uploading</h2>
-                                        </FadeIn>
-                                    </div>
-                                    <div className="md:flex">
-                                        <FadeIn className="text-center m-auto w-52">
-                                            <p className="text-base whitespace-normal">
-                                                Upload to the cloud.
-                                            </p>
-                                        </FadeIn>
-                                    </div>
+                                <MediaAndText mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
+                                    ["Video data stored securely in a PostgreSQL database", 
+                                    "Files uploaded to third party cloud hosting"]
+                                } flipOrientation = {true}/>
+                            </FadeIn>
+                            <FadeIn>
+                                <AnimatedButton onClick={(e) => window.open("https://www.ovia.live")} className="block m-auto choice-button text-base border-2 p-2 rounded-lg -mt-10" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                    www.ovia.live
+                                </AnimatedButton>
+                                <div className="choice-button flex justify-center items-center space-x-2 mt-10 mb-32">
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/javascript.png" alt="javascript" title="javascript" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/html.png" alt="html" title="html" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/css.png" alt="css" title="css" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/node.png" alt="node" title="node" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/express.png" alt="express" title="express" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/postgres.png" alt="postgreSQL"  title="postgreSQL" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/cloudinary.png" alt="cloudinary"  title="cloudinary" className="h-7"/>
+                                    </AnimatedButton>
                                 </div>
                             </FadeIn>
                         </div>
