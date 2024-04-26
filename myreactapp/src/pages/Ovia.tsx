@@ -19,7 +19,7 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     return (
         <div>
             <CodeBackground/>
-            <div className={'fixed top-0 left-2 mx-auto text-base font-bold p-4 z-50 font-sans text-white'}>
+            <div className={'fixed top-0 left-2 text-base font-bold p-4 z-50 font-sans text-white'}>
                 <h2 className="inline-flex">bencornell/fullstack</h2>
                 <AnimatedButton onClick={(e) => handleButtonClick("/fullstack", choices)} className={gradientText} mode="size">
                     /ovia
@@ -32,14 +32,14 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                             <div className="mt-12 text-center">
                                 <FadeIn>
                                     <img className="m-auto w-52" src="/ovia/OviaLogo.png"/>
-                                    <Typewriter className={"text-base relative bottom-5 " + gradientText}>social media for gamers</Typewriter>
+                                    <Typewriter className={"text-base relative bottom-5 " + gradientText}>the social media for gamers</Typewriter>
                                 </FadeIn>
                             </div>
                             <FadeIn delay={20}>
                                 <img src="scrollicon1.gif" className="w-40 mt-20 m-auto"/>
                             </FadeIn>
-                            <FadeIn className="mt-20" delay={20} inFrame={true}>
-                                <MediaAndText mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Streaming" bulletPoints={
+                            <FadeIn className="mt-20" delay={30} inFrame={true}>
+                                <MediaAndText  mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Streaming" bulletPoints={
                                     ["Infinite scrolling", 
                                     "Video keys fetched from a PostgreSQL database",
                                     "Files fetched from cloud hosting",
@@ -59,9 +59,14 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                 } flipOrientation = {true}/>
                             </FadeIn>
                             <FadeIn>
-                                <AnimatedButton onClick={(e) => window.open("https://www.ovia.live")} className="block m-auto choice-button text-base border-2 p-2 rounded-lg mt-24" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
-                                    www.ovia.live
-                                </AnimatedButton>
+                                <div className="flex justify-center">
+                                    <AnimatedButton onClick={(e) => window.open("https://www.ovia.live")} className="pulse-m inline-flex mx-2 choice-button text-base border-2 p-2 rounded-lg mt-24" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                        www.ovia.live
+                                    </AnimatedButton>
+                                    <AnimatedButton onClick={(e) => handleButtonClick("/fullstack", choices)} className="pulse-m inline-flex mx-2 choice-button text-base border-2 p-2 rounded-lg mt-24" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                        other projects
+                                    </AnimatedButton>
+                                </div>
                                 <div className="choice-button flex justify-center items-center space-x-2 mt-10 mb-32">
                                     <AnimatedButton mode="size">
                                         <img src="fullstackicons/javascript.png" alt="javascript" title="javascript" className="h-7"/>

@@ -27,7 +27,7 @@ const Home: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                     <FadeIn className="mt-10" delay={30}>
                         <div className="text-center">
                             <div>
-                                <AnimatedButton onClick={(e) => handleButtonClick(choices[0][0], choices)} className="choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                <AnimatedButton onClick={(e) => handleButtonClick(choices[0][0], choices)} className="pulse-lg choice-button text-base border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                     Fullstack Developer
                                 </AnimatedButton>    
                             </div>

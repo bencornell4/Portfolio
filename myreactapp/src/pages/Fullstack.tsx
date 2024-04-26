@@ -37,8 +37,8 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                                 <div className="md:flex mt-14">
                                     <div className="mt-10 md:mt-0 md:mr-0">
                                         <div className="flex justify-center">
-                                            <AnimatedButton onClick={(e) => handleButtonClick(choices[0][0], choices)} className="choice-button flex overflow-none border-2 rounded-lg w-[100%] sm:w-[20rem] mx-10 overflow-y-hidden" mode="size">
-                                                <iframe scrolling="no" src="https://ovia.live/" title="Ovia" className="flex-grow border-none h-[400px] pointer-events-none"/>
+                                            <AnimatedButton onClick={(e) => handleButtonClick(choices[0][0], choices)} className="pulse-lg choice-button flex overflow-none border-2 rounded-lg w-[100%] sm:w-[20rem] mx-10 overflow-y-hidden" mode="size">
+                                                <iframe scrolling="no" src="https://ovia.live/" title="Ovia" className="flex-grow border-none h-[300px] md:h-[400px] pointer-events-none"/>
                                             </AnimatedButton>
                                         </div>
                                         <div className="choice-button flex justify-center items-center space-x-2 mt-4">
@@ -67,8 +67,8 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                                     </div>
                                     <div className="mt-20 md:mt-0 md:mr-0">
                                         <div className="flex justify-center">
-                                            <AnimatedButton onClick={(e) => handleButtonClick(choices[1][0], choices)} className="choice-button overflow-none border-2 rounded-lg w-[100%] sm:w-[20rem] mx-10 overflow-y-hidden" mode="size">
-                                                <iframe scrolling="no" src="https://bencornell.netlify.app/" title="Ovia" className="flex-grow border-none h-[400px] pointer-events-none"/>
+                                            <AnimatedButton onClick={(e) => handleButtonClick(choices[1][0], choices)} className="pulse-lg choice-button overflow-none border-2 rounded-lg w-[100%] sm:w-[20rem] mx-10 overflow-y-hidden" mode="size">
+                                                <iframe scrolling="no" src="https://bencornell.netlify.app/" title="Ovia" className="flex-grow border-none h-[300px] md:h-[400px] pointer-events-none"/>
                                             </AnimatedButton>
                                         </div>
                                         <div className="choice-button flex justify-center items-center space-x-2 mt-4">
