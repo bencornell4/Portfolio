@@ -9,6 +9,7 @@ import AllJustDebts from '@pages/AllJustDebts';
 import AnythingILike from '@pages/AnythingILike';
 import PissDrunkToo from '@pages/PissDrunkToo';
 import Ovia from '@pages/Ovia';
+import Resume from '@pages/Resume';
 
 export function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ export function App() {
       <AnimatePresence mode="wait">
         <Routes location={location}>
           <Route path="/" element={<PageComponent><Home handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/resume" element={<PageComponent><Resume handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/writer" element={<PageComponent><Writer handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/fullstack" element={<PageComponent><Fullstack handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>

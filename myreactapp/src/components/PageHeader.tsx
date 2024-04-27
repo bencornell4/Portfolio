@@ -9,9 +9,10 @@ type PageHeaderProps = {
     choices: string[][];
     gradientText: string;
     className?: string;
+    includeResume?: boolean;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({currentPage, path, className, handleButtonClick, choices, gradientText}) => {
+const PageHeader: React.FC<PageHeaderProps> = ({currentPage, path, className, handleButtonClick, choices, gradientText, includeResume=true}) => {
 
     return (
         <div className="h-[4rem]">
@@ -21,11 +22,11 @@ const PageHeader: React.FC<PageHeaderProps> = ({currentPage, path, className, ha
                     {currentPage}
                 </AnimatedButton>
             </div>
-            <div className={'align-center fixed top-0 right-2 text-base font-bold p-4 z-50 font-sans text-white'}>
+            {includeResume && <div className={'align-center fixed top-0 right-2 text-base font-bold p-4 z-50 font-sans text-white'}>
                 <AnimatedButton onClick={(e) => handleButtonClick("/resume", choices)} className="pulse-m mx-2 text-sm border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                     resume
                 </AnimatedButton>
-            </div>
+            </div>}
         </div>
     );
 };
