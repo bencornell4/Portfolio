@@ -72,7 +72,7 @@ const PageComponent: React.FC<PageComponentProps> = ({children, className}) => {
             animate={{ opacity: 1, y: !fadeOut ? "0%" : "-100%"}} // Final position (slide up into view)
             exit={{ opacity: 0, y: "-50%" }} // Exit animation (slide up and fade out)
             transition={{ duration: 1 }} // Animation duration
-            className={className}
+            className={"h-[100vh] " + className}
         >
             {addProps({handleButtonClick, choiceJob}, children)}
         </motion.div>

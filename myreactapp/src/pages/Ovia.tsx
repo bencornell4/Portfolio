@@ -7,6 +7,7 @@ import CodeBackground from "@components/CodeBackground";
 import { ChoicePageProps } from "types";
 import MediaAndText from "@components/MediaAndText";
 import { link } from "fs";
+import PageHeader from "@components/PageHeader";
 
 const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
@@ -19,12 +20,7 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     return (
         <div>
             <CodeBackground/>
-            <div className={'fixed top-0 left-2 text-base font-bold p-4 z-50 font-sans text-white'}>
-                <h2 className="inline-flex">bencornell/fullstack</h2>
-                <AnimatedButton onClick={(e) => handleButtonClick("/fullstack", choices)} className={gradientText} mode="size">
-                    /ovia
-                </AnimatedButton>
-            </div>
+            <PageHeader path="fullstack" currentPage="/ovia" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText}/>
             <div className="overflow-y-scroll overflow-x-hidden">
                 <div className="container h-screen font-sans text-white mx-auto">
                     <div className="flex items-center">
@@ -38,11 +34,10 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                             <FadeIn delay={20}>
                                 <img src="scrollicon1.gif" className="w-40 mt-20 m-auto"/>
                             </FadeIn>
-                            <FadeIn className="mt-20" delay={30} inFrame={true}>
+                            <FadeIn className="mt-40 sm:mt-20" delay={30} inFrame={true}>
                                 <MediaAndText  mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Streaming" bulletPoints={
                                     ["Infinite scrolling", 
-                                    "Video keys fetched from a PostgreSQL database",
-                                    "Files fetched from cloud hosting",
+                                    "Video keys fetched from PostgreSQL & streamed from the cloud",
                                     "Third party API integration"]
                                 }/>
                                 <MediaAndText className="mt-36" mediaPath="ovia/OviaLoginPreview.mov" mediaTitle="Authentication" bulletPoints={
@@ -53,7 +48,7 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                     ["Profile data stored securely", 
                                     "Custom profile pics, bios, and display names"]
                                 }/>
-                                <MediaAndText className="mt-36" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
+                                <MediaAndText className="mt-36" mediaPath="ovia/OviaUploadPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
                                     ["Video data stored securely in a PostgreSQL database", 
                                     "Files uploaded to third party cloud hosting"]
                                 } flipOrientation = {true}/>
@@ -67,7 +62,7 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                         other projects
                                     </AnimatedButton>
                                 </div>
-                                <div className="choice-button flex justify-center items-center space-x-2 mt-10 mb-32">
+                                <div className="choice-button flex justify-center items-center space-x-2 mt-10 mb-20">
                                     <AnimatedButton mode="size">
                                         <img src="fullstackicons/javascript.png" alt="javascript" title="javascript" className="h-7"/>
                                     </AnimatedButton>
