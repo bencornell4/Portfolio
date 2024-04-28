@@ -5,12 +5,13 @@ import { useInView } from "react-intersection-observer";
 type FadeInProps = {
     children: React.ReactNode;
     className?: string;
+    id?: string;
     delay?: number;
     duration?: number;
     inFrame?: boolean;
 }
 
-const FadeIn: React.FC<FadeInProps> = ({children, className, delay = 0, duration = 2, inFrame = false}) => {
+const FadeIn: React.FC<FadeInProps> = ({children, className, delay = 0, duration = 2, inFrame = false, id}) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({
         threshold: 0.5
@@ -35,6 +36,7 @@ const FadeIn: React.FC<FadeInProps> = ({children, className, delay = 0, duration
             animate={ controls }
             transition={{ duration: duration, ease: 'easeInOut' }}
             className={className}
+            id={id}
         >
             {children}
         </motion.div>

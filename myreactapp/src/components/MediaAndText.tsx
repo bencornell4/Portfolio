@@ -3,13 +3,27 @@ import FadeIn from "./FadeIn";
 
 type MediaAndTextProps = {
     className?: string;
+    id?: string;
     mediaPath: string;
     mediaTitle: string;
     bulletPoints: string[];
     flipOrientation?: boolean;
+    scrollTo?: string;
 }
 
-const MediaAndText: React.FC<MediaAndTextProps> = ({className, mediaPath, mediaTitle, bulletPoints, flipOrientation = false}) => {
+const MediaAndText: React.FC<MediaAndTextProps> = ({className, mediaPath, mediaTitle, bulletPoints, flipOrientation = false, scrollTo, id}) => {
+
+    function nextElement() {
+        if (scrollTo) {
+            const scrollToElement = document.getElementById(scrollTo);
+            if (scrollToElement) {
+                scrollToElement.scrollIntoView({
+                    block: 'center',
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
 
     const mediaContent = (  <div className={`${flipOrientation ? "mr-5" : "ml-5"} sm:mx-5 inline-flex text-center`}>
                                 <video className="max-h-[80vh] max-w-[40vw] sm:max-w-52" preload="none" loop autoPlay muted playsInline src={mediaPath}/>
@@ -24,11 +38,16 @@ const MediaAndText: React.FC<MediaAndTextProps> = ({className, mediaPath, mediaT
                                             {item}
                                         </p>
                                     ))}
+                                    {scrollTo && <FadeIn>
+                                        <button className="flex w-24 sm:w-40 m-auto mt-5 sm:mt-10 cursor-pointer" onClick={(e) => nextElement()}>
+                                            <img src="scrollicon1.gif"/>
+                                        </button>
+                                    </FadeIn>}
                                 </div>        
                             </div> );
     
     return(
-        <FadeIn className={"flex m-auto justify-center max-h-[80vh] sm:max-w-[50vw] max-w-[30vw] " + className}>
+        <FadeIn id={id} className={"flex m-auto justify-center max-h-[80vh] sm:max-w-[50vw] max-w-[30vw] " + className}>
             {!flipOrientation && mediaContent}
             {!flipOrientation && textContent}
             {flipOrientation && textContent}

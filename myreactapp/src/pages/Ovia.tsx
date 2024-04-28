@@ -32,29 +32,31 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                 </FadeIn>
                             </div>
                             <FadeIn delay={20}>
-                                <img src="scrollicon1.gif" className="w-40 mt-20 m-auto"/>
+                                <button className="flex w-40 mt-20 m-auto cursor-pointer" onClick={(e)=>document.getElementById('firstElement')?.scrollIntoView({block:'center', behavior: 'smooth'})}>
+                                    <img src="scrollicon1.gif"/>
+                                </button>
                             </FadeIn>
-                            <FadeIn className="mt-40 sm:mt-20" delay={30} inFrame={true}>
-                                <MediaAndText  mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Streaming" bulletPoints={
+                            <FadeIn className="mt-40 sm:mt-40" delay={30} inFrame={true}>
+                                <MediaAndText id="firstElement" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Streaming" bulletPoints={
                                     ["Infinite scrolling", 
-                                    "Video keys fetched from PostgreSQL & streamed from the cloud",
-                                    "Third party API integration"]
-                                }/>
-                                <MediaAndText className="mt-36" mediaPath="ovia/OviaLoginPreview.mov" mediaTitle="Authentication" bulletPoints={
+                                    "Video keys fetched from postgreSQL",
+                                    "Streamed from the cloud"]
+                                } scrollTo="secondElement"/>
+                                <MediaAndText id="secondElement" className="mt-36" mediaPath="ovia/OviaLoginPreview.mov" mediaTitle="Authentication" bulletPoints={
                                     ["Passwords hashed, stored and fetched securely", 
                                     "JWTs and cookies for authenticating routes"]
-                                } flipOrientation = {true}/>
-                                <MediaAndText className="mt-36" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Custom Profiles" bulletPoints={
+                                } scrollTo="thirdElement" flipOrientation = {true}/>
+                                <MediaAndText id="thirdElement" className="mt-36" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Custom Profiles" bulletPoints={
                                     ["Profile data stored securely", 
                                     "Custom profile pics, bios, and display names"]
-                                }/>
-                                <MediaAndText className="mt-36" mediaPath="ovia/OviaUploadPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
+                                } scrollTo="fourthElement"/>
+                                <MediaAndText id="fourthElement" className="mt-36" mediaPath="ovia/OviaUploadPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
                                     ["Video data stored securely in a PostgreSQL database", 
                                     "Files uploaded to third party cloud hosting"]
-                                } flipOrientation = {true}/>
+                                } scrollTo="lastElement" flipOrientation = {true}/>
                             </FadeIn>
                             <FadeIn>
-                                <div className="flex justify-center">
+                                <div id="lastElement" className="flex justify-center">
                                     <AnimatedButton onClick={(e) => window.open("https://www.ovia.live")} className="pulse-m inline-flex mx-2 choice-button text-base border-2 p-2 rounded-lg mt-24" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                         www.ovia.live
                                     </AnimatedButton>
