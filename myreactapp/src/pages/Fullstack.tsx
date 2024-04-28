@@ -16,10 +16,10 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
     ]
 
     return (
-        <div>
+        <div className="overflow-y-scroll md:overflow-y-hidden overflow-x-hidden">
             <CodeBackground/>
             <PageHeader path="" currentPage="/fullstack" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText}/>
-            <div className="overflow-y-scroll md:overflow-y-hidden overflow-x-hidden">
+            <div>
                 <div className="container h-screen font-sans text-white mx-auto">
                     <div className="flex items-center">
                         <div className="mt-0 mb-10 mx-auto text-2xl font-bold whitespace-nowrap">

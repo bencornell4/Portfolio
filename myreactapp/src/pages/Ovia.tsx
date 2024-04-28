@@ -1,20 +1,17 @@
-import React, { lazy } from "react";
+import React from "react";
 import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
-import Delay from "@components/Delay";
 import AnimatedButton from "@components/AnimatedButton";
 import CodeBackground from "@components/CodeBackground";
 import { ChoicePageProps } from "types";
 import MediaAndText from "@components/MediaAndText";
-import { link } from "fs";
 import PageHeader from "@components/PageHeader";
 
 const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
     const choices =
     [
-        ["Ovia", "/fullstack/ovia"],
-        ["this portfolio", "/fullstack/portfolio"],
+        []
     ]
 
     return (

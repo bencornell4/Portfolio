@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";

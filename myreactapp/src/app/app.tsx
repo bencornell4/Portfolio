@@ -10,6 +10,7 @@ import AnythingILike from '@pages/AnythingILike';
 import PissDrunkToo from '@pages/PissDrunkToo';
 import Ovia from '@pages/Ovia';
 import Resume from '@pages/Resume';
+import Portfolio from '@pages/Portfolio';
 
 export function App() {
   const location = useLocation();
@@ -19,13 +20,14 @@ export function App() {
       <AnimatePresence mode="wait">
         <Routes location={location}>
           <Route path="/" element={<PageComponent><Home handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
-          <Route path="/resume" element={<PageComponent><Resume handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/writer" element={<PageComponent><Writer handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/fullstack" element={<PageComponent><Fullstack handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>
           <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
           <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>
           <Route path="/fullstack/ovia" element={<PageComponent><Ovia handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/fullstack/portfolio" element={<PageComponent><Portfolio handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/fullstack/resume" element={<PageComponent><Resume handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
         </Routes>
       </AnimatePresence>
     </div>

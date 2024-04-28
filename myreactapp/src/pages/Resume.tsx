@@ -2,7 +2,6 @@ import React from "react";
 import CodeBackground from "@components/CodeBackground";
 import PageHeader from "@components/PageHeader";
 import { ChoicePageProps } from "types";
-import { useLocation } from "react-router-dom";
 
 const Resume: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";

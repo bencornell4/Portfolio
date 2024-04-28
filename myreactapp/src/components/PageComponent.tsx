@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { ChoicePageProps } from "types";
@@ -57,6 +57,8 @@ const PageComponent: React.FC<PageComponentProps> = ({children, className}) => {
             setFadeOut(false);
             setChoiceJob(". . .");
         }, 1000);
+
+        return () => clearTimeout(timeoutId);
     }
 
     const addProps = (props: ChoicePageProps, children: React.ReactNode) => {
