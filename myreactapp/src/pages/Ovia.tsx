@@ -18,11 +18,11 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     ]
 
     return (
-        <div>
+        <div className="h-screen overflow-y-scroll">
             <CodeBackground/>
             <PageHeader path="fullstack" currentPage="/ovia" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText}/>
-            <div className="overflow-y-scroll overflow-x-hidden">
-                <div className="container h-screen font-sans text-white mx-auto">
+            <div>
+                <div className="font-sans text-white mx-auto">
                     <div className="flex items-center">
                         <div className="mt-10 mb-10 mx-auto text-2xl font-bold whitespace-nowrap">
                             <div className="mt-12 text-center">
