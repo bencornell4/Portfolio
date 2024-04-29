@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import Typewriter from "@components/Typewriter";
 import FadeIn from "@components/FadeIn";
 import Delay from "@components/Delay";
 import AnimatedButton from "@components/AnimatedButton";
-import PageComponentContext from "@components/PageComponentContext";
+import { ChoicePageProps } from "types";
 
-const Fullstack: React.FC = () => {
+const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     const gradientText = "bg-gradient-to-tr from-blue-800 to-blue-400 text-transparent bg-clip-text";
-    const {choiceJob, handleButtonClick} = useContext(PageComponentContext);
     const choices =
     [
         ["All Just Debts", "/writer/alljustdebts"],
@@ -19,7 +18,7 @@ const Fullstack: React.FC = () => {
         <div>
             <div className={'fixed top-0 left-2 mx-auto text-base font-bold p-4 z-50 font-mono '}>
                 <h2 className="inline-flex">bencornell</h2>
-                <AnimatedButton onClick={(e) => handleButtonClick("back", choices)} className={gradientText} mode="size">
+                <AnimatedButton onClick={(e) => handleButtonClick("/", choices)} className={gradientText} mode="size">
                     /writer
                 </AnimatedButton>
             </div>

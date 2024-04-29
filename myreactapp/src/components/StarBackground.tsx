@@ -12,7 +12,7 @@ interface Star {
 const generateStars = (count: number): Star[] => {
   return Array.from({ length: count }, (_, index) => ({
     id: `star-${index}`,
-    size: Math.random() * 2 + 2, // Random size between 1 and 4
+    size: Math.random() * 2 + 4, // Random size between 4 and 6
     x: Math.random() * window.screen.width,
     y: (Math.random() * window.screen.height) - window.screen.height,
   }));

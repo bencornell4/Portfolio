@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
+
+.pulse-lg {
+    animation: pulse-animation-lg 2s infinite;
+}
+
+@keyframes pulse-animation-lg {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+}
+
+.pulse-m {
+    animation: pulse-animation-m 2s infinite;
+}
+
+@keyframes pulse-animation-m {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0);
+    }
+}
