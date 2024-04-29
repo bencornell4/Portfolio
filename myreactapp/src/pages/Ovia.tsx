@@ -43,7 +43,7 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                     ["Passwords hashed, stored and fetched securely", 
                                     "JWTs and cookies for authenticating routes"]
                                 } scrollTo="thirdElement" flipOrientation = {true}/>
-                                <MediaAndText id="thirdElement" className="mt-36" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Custom Profiles" bulletPoints={
+                                <MediaAndText id="thirdElement" className="mt-36" mediaPath="ovia/OviaProfilePreview.mp4" mediaTitle="Custom Profiles" bulletPoints={
                                     ["Profile data stored securely", 
                                     "Custom profile pics, bios, and display names"]
                                 } scrollTo="fourthElement"/>
