@@ -23,7 +23,7 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                 <div className="container h-screen font-sans text-white mx-auto">
                     <div className="flex items-center">
                         <div className="mt-0 mb-10 mx-auto text-2xl font-bold whitespace-nowrap">
-                            <div className="mt-10 text-center">
+                            <div id="choiceReadOut" className="mt-10 text-center">
                                 <Typewriter className="inline-flex" delay={4}>I made&nbsp;</Typewriter>
                                 <Delay className="inline-flex" duration={14}>
                                     <Typewriter key={choiceJob} className={gradientText}>{choiceJob}</Typewriter>

@@ -36,6 +36,7 @@ const PageComponent: React.FC<PageComponentProps> = ({children, className}) => {
                 typeDelay = 150 * choice.length;
                 inChoices = 1;
                 setChoiceJob(choice || ". . .");
+                document.getElementById('choiceReadOut')?.scrollIntoView({block:'center', behavior: 'smooth'});
             }
         }
 
