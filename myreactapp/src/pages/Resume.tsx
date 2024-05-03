@@ -15,8 +15,8 @@ const Resume: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                 <div>
                     <div className="flex items-center h-screen">
                         <iframe
-                            src="https://web2pdf.org/temp/2024-04-30/20240430030334.pdf" 
-                            className="w-[100%] h-[61%] sm:h-[80%] sm:mt-8"
+                            src="https://pdflink.to/benfullstack/embed/"
+                            className="border-none w-[100%] h-[61%] sm:h-[80%] sm:mt-8"
                         />
                     </div>
                 </div>
