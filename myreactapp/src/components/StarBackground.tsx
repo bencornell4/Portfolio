@@ -23,7 +23,7 @@ const StarBackground: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname.includes("/fullstack"))
+    if (location.pathname.includes("/"))
     {
       const timeoutId = setTimeout(() => {
         setStars(generateStars(0));

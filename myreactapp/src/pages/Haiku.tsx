@@ -30,6 +30,9 @@ const Haiku: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                             </div>
                             <FadeIn>
                                 <div id="lastElement" className="flex justify-center">
+                                    <AnimatedButton onClick={(e) => window.open("https://www.haiku.best")} className="pulse-m inline-flex mx-2 choice-button text-base border-2 p-2 rounded-lg mt-24" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                        www.haiku.best
+                                    </AnimatedButton>
                                     <AnimatedButton onClick={(e) => handleButtonClick("/fullstack", choices)} className="pulse-m inline-flex mx-2 choice-button text-base border-2 p-2 rounded-lg mt-24" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                         other projects
                                     </AnimatedButton>
