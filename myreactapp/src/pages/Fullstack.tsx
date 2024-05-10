@@ -24,7 +24,7 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
     const descriptions =
     [
         "Animated with Framer Motion",
-        "Integrated LLM using Meta Llama3",
+        "LLM integration with Meta Llama3",
         "Cloud Streaming and User Authentication"
     ]
 
@@ -49,7 +49,7 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                     </div>
                 </div>
             </div>
-            <FadeIn className=" w-[22rem] sm:w-96 m-auto select-none">
+            <FadeIn className="mt-10 mx-5 sm:mx-20 lg:mx-[20rem] select-none">
                 <Swiper
                     modules={[EffectCards, Navigation]}
                     grabCursor={true}
@@ -69,21 +69,21 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                     <SwiperSlide>
                         <div className="flex justify-center">
                             <button onClick={(e) => handleButtonClick(choices[0][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
-                                <img src="cardcovers/portfolioCardCover.jpeg" title="Portfolio Card" className="rounded-lg h-[50vh]"/>
+                                <img src="cardcovers/portfolioCardCover.jpeg" title="Portfolio Card" className="rounded-lg h-[40vh] sm:h-[50vh]"/>
                             </button>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="flex justify-center">
                             <button onClick={(e) => handleButtonClick(choices[1][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
-                                <img src="cardcovers/haikuCardCover.jpeg" title="Haiku Card" className="rounded-lg h-[50vh]"/>
+                                <img src="cardcovers/haikuCardCover.jpeg" title="Haiku Card" className="rounded-lg h-[40vh] sm:h-[50vh]"/>
                             </button>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="flex justify-center">
                             <button onClick={(e) => handleButtonClick(choices[2][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
-                                <video loop autoPlay playsInline muted src="ovia/OviaFeedPreview.mp4" title="Ovia Card" className="rounded-lg h-[50vh]"/>
+                                <video loop autoPlay playsInline muted src="ovia/OviaFeedPreview.mp4" title="Ovia Card" className="rounded-lg h-[40vh] sm:h-[50vh]"/>
                             </button>
                         </div>
                     </SwiperSlide>
