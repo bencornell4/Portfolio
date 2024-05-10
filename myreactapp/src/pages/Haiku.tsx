@@ -7,7 +7,7 @@ import { ChoicePageProps } from "types";
 import MediaAndText from "@components/MediaAndText";
 import PageHeader from "@components/PageHeader";
 
-const Portfolio: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
+const Haiku: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
     const choices =
     [
@@ -17,15 +17,15 @@ const Portfolio: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
     return (
         <div className="h-screen overflow-y-scroll">
             <CodeBackground/>
-            <PageHeader path="fullstack" currentPage="/portfolio" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText}/>
+            <PageHeader path="fullstack" currentPage="/haiku" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText}/>
             <div>
                 <div className="font-sans text-white mx-auto">
                     <div className="flex items-center">
                         <div className="mt-10 mb-10 mx-auto text-2xl font-bold whitespace-nowrap">
                             <div className="mt-12 text-center">
                                 <FadeIn>
-                                    <h2 className="text-xl relative bottom-5">Made with React</h2>
-                                    <Typewriter className={"text-base relative bottom-5 whitespace-pre-wrap " + gradientText}>Typescript, Tailwind, and Framer Motion</Typewriter>
+                                    <h2 className="text-xl relative bottom-5">Made with Angular and Django</h2>
+                                    <Typewriter className={"text-base relative bottom-5 whitespace-pre-wrap " + gradientText}>AI + LLM integration with Meta Llama3</Typewriter>
                                 </FadeIn>
                             </div>
                             <FadeIn>
@@ -39,7 +39,13 @@ const Portfolio: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                                         <img src="fullstackicons/typescript.png" alt="typescript" title="typescript" className="h-7"/>
                                     </AnimatedButton>
                                     <AnimatedButton mode="size">
-                                        <img src="fullstackicons/react.png" alt="react" title="react" className="h-7"/>
+                                        <img src="fullstackicons/django.png" alt="django" title="django" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/angular.png" alt="angular" title="angular" className="h-7"/>
+                                    </AnimatedButton>
+                                    <AnimatedButton mode="size">
+                                        <img src="fullstackicons/meta.png" alt="meta" title="meta" className="h-7"/>
                                     </AnimatedButton>
                                     <AnimatedButton mode="size">
                                         <img src="fullstackicons/tailwind.png" alt="tailwind" title="tailwind" className="h-7"/>
@@ -54,4 +60,4 @@ const Portfolio: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
     );
 };
 
-export default Portfolio;
+export default Haiku;

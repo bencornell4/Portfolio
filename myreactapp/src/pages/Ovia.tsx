@@ -34,12 +34,12 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                 </button>
                             </FadeIn>
                             <FadeIn className="mt-40 sm:mt-40" delay={30} inFrame={true}>
-                                <MediaAndText id="firstElement" mediaPath="ovia/OviaFeedPreview.mov" mediaTitle="Cloud Streaming" bulletPoints={
+                                <MediaAndText id="firstElement" mediaPath="ovia/OviaFeedPreview.mp4" mediaTitle="Cloud Streaming" bulletPoints={
                                     ["Infinite scrolling", 
                                     "Video keys fetched from postgreSQL",
                                     "Streamed from the cloud"]
                                 } scrollTo="secondElement"/>
-                                <MediaAndText id="secondElement" className="mt-36" mediaPath="ovia/OviaLoginPreview.mov" mediaTitle="Authentication" bulletPoints={
+                                <MediaAndText id="secondElement" className="mt-36" mediaPath="ovia/OviaLoginPreview.mp4" mediaTitle="Authentication" bulletPoints={
                                     ["Passwords hashed, stored and fetched securely", 
                                     "JWTs and cookies for authenticating routes"]
                                 } scrollTo="thirdElement" flipOrientation = {true}/>
@@ -47,7 +47,7 @@ const Ovia: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
                                     ["Profile data stored securely", 
                                     "Custom profile pics, bios, and display names"]
                                 } scrollTo="fourthElement"/>
-                                <MediaAndText id="fourthElement" className="mt-36" mediaPath="ovia/OviaUploadPreview.mov" mediaTitle="Cloud Uploading" bulletPoints={
+                                <MediaAndText id="fourthElement" className="mt-36" mediaPath="ovia/OviaUploadPreview.mp4" mediaTitle="Cloud Uploading" bulletPoints={
                                     ["Video data stored securely in a PostgreSQL database", 
                                     "Files uploaded to third party cloud hosting"]
                                 } scrollTo="lastElement" flipOrientation = {true}/>
