@@ -17,39 +17,47 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
     const gradientText = "bg-gradient-to-tr from-blue-400 to-blue-800 text-transparent bg-clip-text";
     const choices =
     [
-        ["this portfolio", "/fullstack/portfolio"],
-        ["haiku.best", "/fullstack/haiku"],
-        ["Ovia", "/fullstack/ovia"],
-    ]
+        ["this portfolio", "/portfolio"],
+        ["haiku.best", "/haiku"],
+        ["Ovia", "/ovia"],
+    ];
     const descriptions =
     [
         "Animated with Framer Motion",
         "LLM integration with Meta Llama3",
-        "Cloud Streaming and User Authentication"
-    ]
+        "Cloud Streaming and User Authentication",
+    ];
+    const links =
+    [
+        "www.bencornell.dev",
+        "www.haiku.best",
+        "www.ovia.live",
+    ];
 
     return (
-        <div className="overflow-y-scroll sm:overflow-y-hidden overflow-x-hidden">
+        <div className="flex flex-col justify-center overflow-y-hidden overflow-x-hidden">
             <CodeBackground/>
-            <PageHeader path="" currentPage="/fullstack" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText}/>
-            <div>
-                <div className="container font-sans text-white mx-auto">
-                    <div className="flex items-center">
-                        <div className="mt-0 mb-10 mx-auto text-2xl font-bold whitespace-nowrap">
-                            <div id="choiceReadOut" className="mt-10 text-center">
-                                <Typewriter className="inline-flex" delay={4}>I made&nbsp;</Typewriter>
-                                <Delay className="inline-flex" duration={14}>
-                                    <Typewriter key={choiceJob} className={gradientText}>{choiceJob}</Typewriter>
-                                </Delay>
-                                <Delay duration={14} className="mt-4">
-                                    <FadeIn key={descriptionIndex} className="text-sm text-white">{descriptions[descriptionIndex]}</FadeIn>
-                                </Delay>
-                            </div>
-                        </div>
+            <PageHeader path="" currentPage="" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText}/>
+            <div className="flex container items-center font-sans text-white mx-auto">
+                <div className="mt-0 mx-auto text-2xl font-bold whitespace-nowrap">
+                    <div id="choiceReadOut" className="mt-10 text-center">
+                        <Typewriter className="inline-flex" delay={4}>I made&nbsp;</Typewriter>
+                        <Delay className="inline-flex" duration={14}>
+                            <Typewriter key={choiceJob} className={gradientText}>{choiceJob}</Typewriter>
+                        </Delay>
+                        <FadeIn delay={14} className="mt-4">
+                            <FadeIn key={descriptionIndex} className="text-sm text-white">{descriptions[descriptionIndex]}</FadeIn>
+                            <AnimatedButton onClick={(e) => window.open("https://" + links[descriptionIndex])} className="pulse-m inline-flex mx-2 choice-button text-sm border-2 p-2 rounded-lg mt-10" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                {links[descriptionIndex]}
+                            </AnimatedButton>
+                            <AnimatedButton onClick={(e) => handleButtonClick(choices[descriptionIndex][1], choices)} className="pulse-m inline-flex mx-2 choice-button text-sm border-2 p-2 rounded-lg mt-10" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                                project info
+                            </AnimatedButton>
+                        </FadeIn>
                     </div>
                 </div>
             </div>
-            <FadeIn className="mt-10 mx-5 sm:mx-20 lg:mx-[20rem] select-none">
+            <FadeIn delay={14} className="mt-[10vh] mx-2 sm:mx-[23vw] select-none" inFrame={true}>
                 <Swiper
                     modules={[EffectCards, Navigation]}
                     grabCursor={true}
@@ -69,21 +77,21 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                     <SwiperSlide>
                         <div className="flex justify-center">
                             <button onClick={(e) => handleButtonClick(choices[0][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
-                                <img src="cardcovers/portfolioCardCover.jpeg" title="Portfolio Card" className="rounded-lg h-[40vh] sm:h-[50vh]"/>
+                                <img src="cardcovers/portfolioCardCover.jpeg" title="Portfolio Card" className="rounded-lg h-[40vh] sm:h-[40vh]"/>
                             </button>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="flex justify-center">
                             <button onClick={(e) => handleButtonClick(choices[1][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
-                                <img src="cardcovers/haikuCardCover.jpeg" title="Haiku Card" className="rounded-lg h-[40vh] sm:h-[50vh]"/>
+                                <img src="cardcovers/haikuCardCover.jpeg" title="Haiku Card" className="rounded-lg h-[40vh] sm:h-[40vh]"/>
                             </button>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="flex justify-center">
                             <button onClick={(e) => handleButtonClick(choices[2][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
-                                <video loop autoPlay playsInline muted src="ovia/OviaFeedPreview.mp4" title="Ovia Card" className="rounded-lg h-[40vh] sm:h-[50vh]"/>
+                                <video loop autoPlay playsInline muted src="ovia/OviaFeedPreview.mp4" title="Ovia Card" className="rounded-lg h-[40vh] sm:h-[40vh]"/>
                             </button>
                         </div>
                     </SwiperSlide>

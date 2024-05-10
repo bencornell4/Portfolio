@@ -20,16 +20,19 @@ export function App() {
       <StarBackground/>
       <AnimatePresence mode="wait">
         <Routes location={location}>
-          <Route path="/" element={<PageComponent><Home handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          {
+            //<Route path="/" element={<PageComponent><Home handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          }
           <Route path="/writer" element={<PageComponent><Writer handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/" element={<PageComponent><Fullstack handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/fullstack" element={<PageComponent><Fullstack handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/writer/alljustdebts" element={<AllJustDebts/>}/>
           <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
           <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>
-          <Route path="/fullstack/ovia" element={<PageComponent><Ovia handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
-          <Route path="/fullstack/portfolio" element={<PageComponent><Portfolio handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
-          <Route path="/fullstack/haiku" element={<PageComponent><Haiku handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
-          <Route path="/fullstack/resume" element={<PageComponent><Resume handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/ovia" element={<PageComponent><Ovia handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/portfolio" element={<PageComponent><Portfolio handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/haiku" element={<PageComponent><Haiku handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/resume" element={<PageComponent><Resume handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
         </Routes>
       </AnimatePresence>
     </div>
