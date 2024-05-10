@@ -4,6 +4,6 @@ export type ErrorProps = {
 }
 
 export type ChoicePageProps = {
-    handleButtonClick: (buttonSelected: string, choices: Array<string[]>) => void;
+    handleButtonClick: (buttonSelected: string, choices: Array<string[]>, disableNavigation?: boolean) => void;
     choiceJob: string;
 }

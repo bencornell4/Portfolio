@@ -24,8 +24,8 @@ const Portfolio: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                         <div className="mt-10 mb-10 mx-auto text-2xl font-bold whitespace-nowrap">
                             <div className="mt-12 text-center">
                                 <FadeIn>
-                                    <h2 className="text-2xl relative bottom-5">Made with React</h2>
-                                    <Typewriter className={"text-base relative bottom-5 " + gradientText}>Typescript, Tailwind, and Framer Motion</Typewriter>
+                                    <h2 className="text-xl relative bottom-5">Made with React</h2>
+                                    <Typewriter className={"text-base relative bottom-5 whitespace-pre-wrap " + gradientText}>Typescript, Tailwind, and Framer Motion</Typewriter>
                                 </FadeIn>
                             </div>
                             <FadeIn>

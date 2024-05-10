@@ -11,6 +11,7 @@ import PissDrunkToo from '@pages/PissDrunkToo';
 import Ovia from '@pages/Ovia';
 import Resume from '@pages/Resume';
 import Portfolio from '@pages/Portfolio';
+import Haiku from '@pages/Haiku';
 
 export function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ export function App() {
           <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>
           <Route path="/fullstack/ovia" element={<PageComponent><Ovia handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/fullstack/portfolio" element={<PageComponent><Portfolio handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/fullstack/haiku" element={<PageComponent><Haiku handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/fullstack/resume" element={<PageComponent><Resume handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
         </Routes>
       </AnimatePresence>
