@@ -13,11 +13,15 @@ const PageComponent: React.FC<PageComponentProps> = ({children, className}) => {
     const [fadeOut, setFadeOut] = useState<boolean>(false);
     const navigate = useNavigate();
 
-    const handleButtonClick = (buttonSelected: string, choices: Array<string[]>) => {
+    const handleButtonClick = (buttonSelected: string, choices: Array<string[]>, disableNavigation?: boolean) => {
         var typeDelay = 0;
         var path = "/";
         const choice = buttonSelected;
-        
+        if (disableNavigation)
+        {
+            setChoiceJob(choice || ". . .");
+            return;
+        }
         //fade out buttons
         const buttons = Array.from(document.getElementsByClassName('choice-button'));
         for (const button of buttons) {
