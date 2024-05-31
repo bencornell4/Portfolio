@@ -23,7 +23,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({currentPage, path, className, ha
                 </AnimatedButton>
             </div>
             {includeResume && <div className={'inline-flex text-base font-bold p-4 z-50 font-sans text-white'}>
-                <AnimatedButton onClick={(e) => handleButtonClick("/fullstack/resume", choices)} className="pulse-m mx-2 text-sm border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                <AnimatedButton onClick={(e) => handleButtonClick("/resume", choices)} className="pulse-m mx-2 text-sm border-2 p-2 rounded-lg" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                     resume
                 </AnimatedButton>
             </div>}

@@ -33,7 +33,7 @@ const StarBackground: React.FC = () => {
     } else {
       setStars(generateStars(50)); // Generate x stars 
     }
-  }, [location]);
+  }, []);
 
   return (
     <div className="absolute -z-10 bg-gradient-to-t from-gray-800 to-gray-900 w-full h-screen overflow-hidden">

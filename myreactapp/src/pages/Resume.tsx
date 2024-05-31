@@ -10,7 +10,7 @@ const Resume: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) => {
     return (
         <div>
             <CodeBackground/>
-            <PageHeader path="fullstack" currentPage="/resume" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText} includeResume={false}/>
+            <PageHeader path="" currentPage="/resume" handleButtonClick={handleButtonClick} choices={choices} gradientText={gradientText} includeResume={false}/>
             <div className="-mt-14 px-10 h-screen w-full font-mono text-white mx-auto">
                 <div>
                     <div className="flex items-center h-screen">
