@@ -20,18 +20,21 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
         ["this portfolio", "/portfolio"],
         ["haiku.best", "/haiku"],
         ["Ovia", "/ovia"],
+        ["Meishi", "/meishi"],
     ];
     const descriptions =
     [
         "Animated with Framer Motion",
-        "LLM integration with Meta Llama3",
+        "LLM Integration with Meta Llama3",
         "Cloud Streaming and User Authentication",
+        "GPT-4o & DALL-E 3 Integration",
     ];
     const links =
     [
         "www.bencornell.dev",
         "www.haiku.best",
         "www.ovia.live",
+        "none",
     ];
 
     return (
@@ -47,9 +50,9 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                         </Delay>
                         <FadeIn delay={14} className="mt-4">
                             <FadeIn key={descriptionIndex} className="text-sm text-white">{descriptions[descriptionIndex]}</FadeIn>
-                            <AnimatedButton onClick={(e) => window.open("https://" + links[descriptionIndex])} className="pulse-m inline-flex mx-2 choice-button text-sm border-2 p-2 rounded-lg mt-10" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
+                            { links[descriptionIndex] != "none" && <AnimatedButton onClick={(e) => window.open("https://" + links[descriptionIndex])} className="pulse-m inline-flex mx-2 choice-button text-sm border-2 p-2 rounded-lg mt-10" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                 {links[descriptionIndex]}
-                            </AnimatedButton>
+                            </AnimatedButton> }
                             <AnimatedButton onClick={(e) => handleButtonClick(choices[descriptionIndex][1], choices)} className="pulse-m inline-flex mx-2 choice-button text-sm border-2 p-2 rounded-lg mt-10" mode="color" textColor="hover:text-blue-400" borderColor="hover:border-blue-400">
                                 project info
                             </AnimatedButton>
@@ -92,6 +95,13 @@ const Fullstack: React.FC<ChoicePageProps> = ({handleButtonClick, choiceJob}) =>
                         <div className="flex justify-center">
                             <button onClick={(e) => handleButtonClick(choices[2][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
                                 <video loop autoPlay playsInline muted src="ovia/OviaFeedPreview.mp4" title="Ovia Card" className="rounded-lg h-[40vh] sm:h-[40vh]"/>
+                            </button>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="flex justify-center">
+                            <button onClick={(e) => handleButtonClick(choices[3][0], choices)} className="pulse-lg choice-button overflow-visible border-2 rounded-lg">
+                                <img src="cardcovers/MeishiCardCover.png" title="Meishi Card" className="rounded-lg h-[40vh] sm:h-[40vh]"/>
                             </button>
                         </div>
                     </SwiperSlide>

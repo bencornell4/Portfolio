@@ -9,6 +9,7 @@ import AllJustDebts from '@pages/AllJustDebts';
 import AnythingILike from '@pages/AnythingILike';
 import PissDrunkToo from '@pages/PissDrunkToo';
 import Ovia from '@pages/Ovia';
+import Meishi from '@pages/Meishi';
 import Resume from '@pages/Resume';
 import Portfolio from '@pages/Portfolio';
 import Haiku from '@pages/Haiku';
@@ -30,6 +31,7 @@ export function App() {
           <Route path="/writer/anythingilike" element={<AnythingILike/>}/>
           <Route path="/writer/pissdrunktoo" element={<PissDrunkToo/>}/>
           <Route path="/ovia" element={<PageComponent><Ovia handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
+          <Route path="/meishi" element={<PageComponent><Meishi handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/portfolio" element={<PageComponent><Portfolio handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/haiku" element={<PageComponent><Haiku handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
           <Route path="/resume" element={<PageComponent><Resume handleButtonClick={() => {}} choiceJob=''/></PageComponent>}/>
